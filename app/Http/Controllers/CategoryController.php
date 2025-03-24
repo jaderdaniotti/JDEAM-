@@ -36,7 +36,7 @@ class CategoryController extends Controller
             'name' => $request->name,
         ]);
 
-        return to_route('gestisci');
+        return to_route('gestione');
     }
 
     /**

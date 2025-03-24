@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 class Website extends Controller
 {
     public function gestione(Category $category, Player $player, Platform $platform, Game $game){
-        return view('gestione', compact('category', 'player', 'platform', 'game'));
+        $categories = Category::all();
+        $platforms = Platform::all();
+        $players = Player::all();
+        $games = Game::all();
+        return view('gestione', compact('categories', 'players', 'platforms', 'games'));
     }
 }
