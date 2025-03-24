@@ -1,14 +1,14 @@
 @import 'bootstrap';
 @import './bootstrap-icons.css';
 
-body{
+body {
     font-family: "Darker Grotesque", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
 }
 
-/* #region SETTAGGI */
+/* #region SETTAGGI DONE */
 .darker-grotesque {
     font-family: "Darker Grotesque", sans-serif;
     font-optical-sizing: auto;
@@ -51,38 +51,65 @@ body{
 /* #endregion */
 
 
-nav ul{
+/* #region NAV DONE */
+nav ul {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-nav .darker-grotesque{
+nav .darker-grotesque {
     font-weight: 700;
 }
-.nav-link{
+
+.nav-link {
     color: whitesmoke !important;
     font-size: 1.5rem;
     text-transform: uppercase;
 }
-nav i{
+.nav-link:hover{
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+    color: #7A8B9D !important;
+}
+
+nav i {
     color: white;
     font-size: 1.2rem;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     background-color: #7A8B9D;
 }
 
+/* #endregion */
 
 
-.btn{
+
+/* #region BTN */
+.btn {
     border: 2px solid white;
     color: white;
+    font-size: 1.2rem;
 }
-.btn:hover{
+
+.btn:hover {
+    transition: all 0.1s linear;
     border: 2px solid #7A8B9D;
     transform: scale(1.08);
 }
 
+.btn-submit:hover {
+    background-color: #66BBD0;
+}
+
+/* #endregion */
+
+/* #region FORM */
+.form-control {
+    border: 1px solid #66BBD0;
+    color: #203154;
+}
+
+/* #endregion */

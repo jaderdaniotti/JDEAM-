@@ -28,8 +28,8 @@
         
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Cerca un prodotto..." aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Cerca</button>
-        </form>
+          <button class="btn btn-submit" type="submit">Cerca</button>
+        </form> <br>
         <div class="d-flex mx-2  justify-content-center">
             <a href="" class="btn"><i class="bi bi-person-add"></i></a>
             <a href="" class="btn mx-1"><i class="bi bi-box-arrow-in-right"></i></a>
