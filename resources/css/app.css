@@ -1,0 +1,88 @@
+@import 'bootstrap';
+@import './bootstrap-icons.css';
+
+body{
+    font-family: "Darker Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* #region SETTAGGI */
+.darker-grotesque {
+    font-family: "Darker Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.agdasima-regular {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.agdasima-bold {
+    font-family: "Agdasima", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.bg-navbar {
+    background-color: #171D25;
+}
+
+.bg-section-claire {
+    background-color: #203154;
+}
+
+.bg-section-fonce {
+    background-color: #1B2838;
+}
+
+.color-grey-secondary {
+    color: #7A8B9D;
+}
+
+.color-grey-secondary:hover {
+    color: #66BBD0;
+}
+
+/* #endregion */
+
+
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+nav .darker-grotesque{
+    font-weight: 700;
+}
+.nav-link{
+    color: whitesmoke !important;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+nav i{
+    color: white;
+    font-size: 1.2rem;
+}
+.navbar-toggler{
+    background-color: #7A8B9D;
+}
+
+
+
+.btn{
+    border: 2px solid white;
+    color: white;
+}
+.btn:hover{
+    border: 2px solid #7A8B9D;
+    transform: scale(1.08);
+}
+
