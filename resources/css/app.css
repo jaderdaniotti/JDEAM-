@@ -69,7 +69,8 @@ nav .darker-grotesque {
     font-size: 1.5rem;
     text-transform: uppercase;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     transition: all 0.1s linear;
     transform: scale(1.02);
     color: #7A8B9D !important;
@@ -86,17 +87,19 @@ nav i {
 
 /* #endregion */
 
-.header{
+.header {
     min-height: 80vh;
     padding: 2rem;
     color: white;
 }
-.accordion-button{
+
+.accordion-button {
     background-color: #171d25;
     font-size: 1.2rem;
     color: white;
 }
-.accordion-item{
+
+.accordion-item {
     background-color: #171D25;
     color: white;
 }
@@ -122,120 +125,52 @@ nav i {
 
 /* #region FORM */
 
+/* #region form register/login */
 .form-user .form-control {
     border: 1px solid #66BBD0;
     color: #203154;
 
 }
-.form-user{
+
+.form-user {
     margin-top: 1rem;
     padding: 1rem 6rem;
 }
-.form-user label{
+
+.form-user label {
     font-size: 1.5em;
     background-color: #203154;
-    color: whitesmoke ;
+    color: whitesmoke;
     margin-top: 0.3rem;
 }
-.form-user button:hover{
+
+.form-user button:hover {
     color: white;
 }
 
 /* #endregion */
 
-.modal button{
+.gestione-form{
+    color: white;
+    border: #7A8B9D solid 2px;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    height: max-content;
+}
+.gestione-form button{
+    width: max-content;
+}
+
+/* #endregion */
+
+.modal button {
     margin: 0.1rem;
 }
-.modal button:hover{
+
+.modal button:hover {
     transition: all 0.1s linear;
     transform: scale(1.02);
     color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
