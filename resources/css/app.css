@@ -6,6 +6,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    background-color: #203154;
 }
 
 /* #region SETTAGGI DONE */
@@ -85,7 +86,20 @@ nav i {
 
 /* #endregion */
 
-
+.header{
+    min-height: 80vh;
+    padding: 2rem;
+    color: white;
+}
+.accordion-button{
+    background-color: #171d25;
+    font-size: 1.2rem;
+    color: white;
+}
+.accordion-item{
+    background-color: #171D25;
+    color: white;
+}
 
 /* #region BTN */
 .btn {
@@ -107,9 +121,121 @@ nav i {
 /* #endregion */
 
 /* #region FORM */
-.form-control {
+
+.form-user .form-control {
     border: 1px solid #66BBD0;
     color: #203154;
+
+}
+.form-user{
+    margin-top: 1rem;
+    padding: 1rem 6rem;
+}
+.form-user label{
+    font-size: 1.5em;
+    background-color: #203154;
+    color: whitesmoke ;
+    margin-top: 0.3rem;
+}
+.form-user button:hover{
+    color: white;
 }
 
 /* #endregion */
+
+.modal button{
+    margin: 0.1rem;
+}
+.modal button:hover{
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
