@@ -8,6 +8,7 @@ class Category extends Model
 {
     protected $fillable = [
         "name",
+        "type",
     ];
     public function games(){
         return $this->belongsToMany(Game::class);

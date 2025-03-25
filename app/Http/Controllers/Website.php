@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Game;
-use App\Models\Platform;
-use App\Models\Player;
 use Illuminate\Http\Request;
 
 class Website extends Controller
 {
-    public function gestione(Category $category, Player $player, Platform $platform, Game $game){
+    public function gestione(Category $category, Game $game){
         $categories = Category::all();
-        $platforms = Platform::all();
-        $players = Player::all();
+        $gamecategories = Category::where("type", 'category')->get();
+        $platforms = Category::where('type', 'platform')->get();
+        $players = Category::where('type','player')->get();
         $games = Game::all();
-        return view('gestione', compact('categories', 'players', 'platforms', 'games'));
+        return view('gestione', compact('categories',  'games', 'platforms', 'gamecategories', 'players'));
     }
 }

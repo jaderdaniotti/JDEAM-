@@ -11,10 +11,5 @@ class Game extends Model
     public function categories(){
         return $this->belongsToMany(Category::class);
     }
-    public function platforms(){
-        return $this->belongsToMany(Platform::class);
-    }
-    public function players(){
-        return $this->belongsToMany(Player::class);
-    }
+
 }

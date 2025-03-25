@@ -34,6 +34,7 @@ class CategoryController extends Controller
     {
         Category::create([
             'name' => $request->name,
+            'type' => $request->type,
         ]);
 
         return to_route('gestione');

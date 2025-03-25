@@ -17,16 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->integer('price');
             
-
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-
-            $table->unsignedBigInteger('platform_id');
-            $table->foreign('platform_id')->references('id')->on('platforms');
-
-            $table->unsignedBigInteger('player_id');
-            $table->foreign('player_id')->references('id')->on('players');
-
             $table->timestamps();
         });
     }
