@@ -29,7 +29,15 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
-        //
+        $path_image = $request->file('image')->store('covers', 'public');
+        Game::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'year' => $request->year,
+            'image' => $path_image,
+        ]);
+
+        return to_route('gestione');
     }
 
     /**
@@ -61,6 +69,7 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
-        //
+        $game->delete();
+        return to_route('gestione');
     }
 }

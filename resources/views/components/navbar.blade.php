@@ -75,39 +75,3 @@
       </div>
     </div>
   </nav>
-{{-- <nav class="navbar navbar-expand-lg bg-navbar">
-  <div class="container-fluid">
-    <!-- Toggler per schermi piccoli -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon color-white"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-      <!-- Navbar per schermi grandi e medi (sopra lg) -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
-            <img src="/images/LOGO/fullstack.png" alt="Logo" height="100">
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active darker-grotesque text-white" href="#">Jdeam</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active agdasima-regular" href="#">NEGOZIO</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active agdasima-regular" href="#">COMUNITà</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active agdasima-regular" href="#">Informazioni</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active agdasima-regular" href="#">Assistenza</a>
-        </li>
-      </ul>
-
-      
-    </div>
-  </div>
-</nav> --}}

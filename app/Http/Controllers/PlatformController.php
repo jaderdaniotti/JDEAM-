@@ -65,6 +65,7 @@ class PlatformController extends Controller
      */
     public function destroy(Platform $platform)
     {
-        //
+        $platform->delete();
+        return to_route('gestione');
     }
 }

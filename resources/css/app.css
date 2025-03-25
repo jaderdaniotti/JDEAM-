@@ -87,6 +87,7 @@ nav i {
 
 /* #endregion */
 
+/* #region WELCOME */
 .header {
     min-height: 80vh;
     padding: 2rem;
@@ -104,6 +105,8 @@ nav i {
     color: white;
 }
 
+/* #endregion */
+
 /* #region BTN */
 .btn {
     border: 2px solid white;
@@ -120,6 +123,40 @@ nav i {
 .btn-submit:hover {
     background-color: #66BBD0;
 }
+
+.btn-delete{
+    background-color: red !important;
+    border: red solid 2px;
+}
+.btn-delete i{
+    background-color: red ;
+}
+.btn-delete:hover{
+    background-color: red;
+    border: red solid 2px;
+}
+.btn-delete i:hover{
+    color: white;
+    background-color: red ;
+}
+
+.btn-edit{
+    background-color: #7A8B9D;
+    border: #7A8B9D solid 2px;
+}
+.btn-edit i{
+    background-color: #7A8B9D ;
+    color: black;
+}
+.btn-edit:hover{
+    background-color: #7A8B9D;
+    border: #7A8B9D solid 2px;
+}
+.btn-edit i:hover{
+    color: white;
+    background-color: #7A8B9D ;
+}
+
 
 /* #endregion */
 
@@ -150,20 +187,16 @@ nav i {
 
 /* #endregion */
 
-.gestione-form{
+.gestione-form-modal {
     color: white;
-    border: #7A8B9D solid 2px;
-    padding: 1rem;
-    margin: 1rem;
     border-radius: 10px;
     font-size: 1.3rem;
-}
-.gestione-form button{
-    width: max-content;
+    width: 80%;
 }
 
 /* #endregion */
 
+/* #region modal */
 .modal button {
     margin: 0.1rem;
 }
@@ -172,4 +205,46 @@ nav i {
     transition: all 0.1s linear;
     transform: scale(1.02);
     color: white;
+}
+
+/* #endregion */
+
+.aside-left {
+    position: fixed;
+    top: 50;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.aside-left button {
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.aside-left button:hover {
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+    color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .aside-left {
+        position: relative;
+    }
 }

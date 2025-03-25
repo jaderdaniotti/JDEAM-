@@ -65,6 +65,7 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
-        //
+        $player->delete();
+        return to_route('gestione');
     }
 }
