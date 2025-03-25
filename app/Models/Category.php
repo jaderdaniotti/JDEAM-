@@ -10,6 +10,6 @@ class Category extends Model
         "name",
     ];
     public function games(){
-        return $this->hasMany(Game::class);
+        return $this->belongsToMany(Game::class);
     }
 }
