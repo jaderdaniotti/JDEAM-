@@ -6,9 +6,7 @@ use App\Models\Game;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Website::class,'index'])->name('home');
 Route::get('/jdeam/gestione', [Website::class, 'gestione'])->name('gestione')->middleware('auth');
 
 //rotte edit

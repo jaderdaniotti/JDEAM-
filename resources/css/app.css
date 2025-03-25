@@ -208,6 +208,14 @@ nav i {
     font-size: 1.3rem;
     width: 80%;
 }
+.edit-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-scroll{
+    overflow-y: ;
+}
 
 
 /* #endregion */
@@ -278,13 +286,24 @@ nav i {
 
 /* #endregion */
 
-.edit-col{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+.container-games{
+    border: #171d25 1px solid;
+    border-radius: 12px;
+    background-color: #1B2838;
+    padding: 1rem 1rem;
 }
-.form-scroll{
-    overflow-y: ;
+.container-games .card{
+    width: 33%;
+    padding: 1rem;
+    background-color: #1B2838;
+    color: whitesmoke;
+    border: #171D25 0px solid;
+}
+.container-games .card:hover{
+    transition: all 0.2s linear;
+    transform: scale(1.02);
 }
 
 

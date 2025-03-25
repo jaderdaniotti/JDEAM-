@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-navbar">
     <div class="container-fluid ">
         <div class="d-flex  justify-content-center align-items-center">
-            <a class="nav-link active" aria-current="page" href="/">
+            <a class="nav-link active" aria-current="page" href="{{route('home')}}">
                 <img src="/images/LOGO/fullstack.png" alt="Logo" height="100">
             </a>
             <a class="nav-link active darker-grotesque text-dark" href="/">Jdeam</a>
