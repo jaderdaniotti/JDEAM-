@@ -64,7 +64,57 @@
                         </div>
                       </div>
                     </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsePrice" aria-expanded="false" aria-controls="panelsStayOpen-collapsePrice">
+                          Prezzo
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapsePrice" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="checkgratis" value= "0">
+                              <label class="form-check-label" for="checktratis"  >
+                                  Gratis
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check5" value= "5">
+                              <label class="form-check-label" for="check5"  >
+                                  >5$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check10" value= "10">
+                              <label class="form-check-label" for="check10"  >
+                                  >10$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check15" value= "15">
+                              <label class="form-check-label" for="check15"  >
+                                  >15$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check20" value= "20">
+                              <label class="form-check-label" for="check20"  >
+                                  >20$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check25" value= "25">
+                              <label class="form-check-label" for="check25"  >
+                                  >25$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check30" value= "30">
+                              <label class="form-check-label" for="check30"  >
+                                  >30$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check50" value= "50">
+                              <label class="form-check-label" for="check50"  >
+                                  >50$
+                              </label><br>
+                              <input class="form-check-input" type="checkbox" id="check80" value= "80">
+                              <label class="form-check-label" for="check80"  >
+                                  >80$
+                              </label><br>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
             </div>
             <div class="col-12 col-lg-10 container-games">
               <div class="row justify-content-between">

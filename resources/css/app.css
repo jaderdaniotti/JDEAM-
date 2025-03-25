@@ -208,12 +208,14 @@ nav i {
     font-size: 1.3rem;
     width: 80%;
 }
-.edit-col{
+
+.edit-col {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.form-scroll{
+
+.form-scroll {
     overflow-y: ;
 }
 
@@ -246,21 +248,21 @@ nav i {
     margin: 1rem;
     padding: 2rem;
 }
+
 .aside-left button:hover {
     transition: all 0.1s linear;
     transform: scale(1.02);
     color: whitesmoke;
 }
 
-.aside-right{
+.aside-right {
     margin-top: 2vh;
     justify-content: center;
     color: whitesmoke;
-    border: #7A8B9D 5px solid;
     padding: 1.5rem;
     border-radius: 12px;
 }
-.aside-right button{
+.aside-right button {
     width: max-content;
 }
 .aside-right button:hover {
@@ -268,16 +270,16 @@ nav i {
     transform: scale(1.02);
     color: whitesmoke;
 }
-.aside-right input{
+.aside-right input {
     width: 90%;
 }
-.aside-right .form-check-input{
+.aside-right .form-check-input {
     width: 1rem;
 }
-.aside-right .accordion-item{
+.aside-right .accordion-item {
     background-color: #203154;
 }
-.aside-right .accordion-button{
+.aside-right .accordion-button {
     background-color: #203154;
     border: #7A8B9D 2px solid;
     margin: 1rem;
@@ -288,23 +290,29 @@ nav i {
 
 
 
-.container-games{
+/* #region container games */
+.container-games {
     border: #171d25 1px solid;
     border-radius: 12px;
     background-color: #1B2838;
     padding: 1rem 1rem;
 }
-.container-games .card{
+
+.container-games .card {
     width: 33%;
     padding: 1rem;
     background-color: #1B2838;
     color: whitesmoke;
     border: #171D25 0px solid;
 }
-.container-games .card:hover{
+
+.container-games .card:hover {
     transition: all 0.2s linear;
     transform: scale(1.02);
 }
+
+/* #endregion */
+
 
 
 
@@ -345,6 +353,4 @@ nav i {
 
 
 
-*{
-
-}
+* {}

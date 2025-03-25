@@ -6,8 +6,8 @@
                     @method('PUT')
                     @csrf
                     <h1>Modifica <span class="color-grey-secondary fw-bolder">{{$category->name}}</span></h1>
-
                     <input type="text" name="name" class="form-control" placeholder="Inserisci il nome della categoria..." value="{{$category->name}}">
+                    <input type="checkbox" checked value="{{$category->type}}" name="type" class="d-none">
                     <div class="row justify-content-center mt-2">
                         <button class="btn btn-submit mt-1 " type="submit">Modifica</button>
                     </div>

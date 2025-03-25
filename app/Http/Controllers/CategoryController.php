@@ -63,7 +63,7 @@ class CategoryController extends Controller
     {
         $category->update([
             'name' => $request->name,
-
+            'type' => $request->type,
         ]);
 
         return to_route('gestione');

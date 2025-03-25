@@ -13,12 +13,7 @@
                     <form action="{{route('categories.store')}}" method="POST" class="gestione-form-modal text-center">
                         @csrf
                         <input type="text" name="name" class="form-control" placeholder="Inserisci il nome della categoria...">
-                        <select class="form-select mt-1" aria-label="Default select example" name="type">
-                            <option selected>Seleziona tipologia</option>
-                            <option value="category">Categoria</option>
-                            <option value="player">Tipo di giocatori</option>
-                            <option value="platform">Piattaforma</option>
-                          </select>
+                            <input type="checkbox" checked value="category" name="type" class="d-none">
                         <div class="row justify-content-center mt-2">
                             <button class="btn  btn-submit mt-1 ">Aggiungi</button>
                         </div>
@@ -29,22 +24,20 @@
                             <tr class="table table-secondary">
                                 <th scope="col table-secondary">ID</th>
                                 <th scope="col table-secondary">Nome</th>
-                                <th scope="col table-secondary">Tipo</th>
                                 <th scope="col table-secondary">Modifica</th>
                                 <th scope="col table-secondary">Elimina</th>
                             </tr>
-                            @foreach ($categories as $category)
+                            @foreach ($gamecategories as $gamecategory)
                             <tr class="table table-secondary">
-                                <th scope="col table-secondary">{{$category->id}}</th>
-                                <th scope="col table-secondary">{{$category->name}}</th>
-                                <th scope="col table-secondary">{{$category->type}}</th>
+                                <th scope="col table-secondary">#{{$gamecategory->id}}</th>
+                                <th scope="col table-secondary">{{$gamecategory->name}}</th>
                                 <th scope="col table-secondary">
-                                    <a href="{{route('categories.edit', $category->id)}}">
+                                    <a href="{{route('categories.edit', $gamecategory->id)}}">
                                         <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
                                     </a>
                                 </th>
                                 <th scope="col table-secondary">
-                                    <form action="{{route('categories.destroy', $category->id)}}" method="POST">
+                                    <form action="{{route('categories.destroy', $gamecategory->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-delete"><i class="bi bi-trash3"></i></button>
@@ -66,9 +59,10 @@
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body d-flex justify-content-center">
-                        <form action="" method="POST" class="gestione-form-modal text-center">
+                        <form action="{{route('categories.store')}}" method="POST" class="gestione-form-modal text-center">
                             @csrf
                             <input type="text" name="name" class="form-control" placeholder="Inserisci il nome della piattaforma...">
+                            <input type="checkbox" checked value="platform" name="type" class="d-none">
                             <div class="row justify-content-center mt-2">
                                 <button class="btn btn-submit mt-1 ">Aggiungi</button>
                             </div>
@@ -82,24 +76,24 @@
                                     <th scope="col table-secondary">Modifica</th>
                                     <th scope="col table-secondary">Elimina</th>
                                 </tr>
-                                {{-- @foreach ($platforms as $platform) --}}
+                                @foreach ($platforms as $platform) 
                                 <tr class="table table-secondary">
-                                    <th scope="col table-secondary"></th>
-                                    <th scope="col table-secondary"></th>
+                                    <th scope="col table-secondary">#{{$platform->id}}</th>
+                                    <th scope="col table-secondary">{{$platform->name}}</th>
                                     <th scope="col table-secondary">
-                                        <a href="">
+                                        <a href="{{route('categories.edit', $platform->id)}}">
                                             <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
                                         </a>
                                     </th>
                                     <th scope="col table-secondary">
-                                        <form action="" method="POST">
+                                        <form action="{{route('categories.destroy', $platform->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-delete"><i class="bi bi-trash3"></i></button>
-                                        </form> 
+                                        </form>
                                     </th>
                                 </tr>
-                                {{-- @endforeach --}}
+                                 @endforeach 
                             </table>
                         </div>
                     </div>
@@ -114,9 +108,10 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex justify-content-center">
-                    <form action="" method="POST" class="gestione-form-modal text-center">
+                    <form action="{{route('categories.store')}}" method="POST" class="gestione-form-modal text-center">
                         @csrf
                         <input type="text" name="name" class="form-control" placeholder="Inserisci il nome della categoria...">
+                        <input type="checkbox" checked value="player" name="type" class="d-none">
                         <div class="row justify-content-center mt-2">
                             <button class="btn btn-submit mt-1 ">Aggiungi</button>
                         </div>
@@ -130,25 +125,24 @@
                                 <th scope="col table-secondary">Modifica</th>
                                 <th scope="col table-secondary">Elimina</th>
                             </tr>
-                            {{-- @foreach ($players as $player) --}}
+                            @foreach ($players as $player)
                             <tr class="table table-secondary">
-                                <th scope="col table-secondary">  </th>
-                                <th scope="col table-secondary">  </th>
+                                <th scope="col table-secondary">#{{$player->id}}</th>
+                                <th scope="col table-secondary">{{$player->name}}</th>
                                 <th scope="col table-secondary">
-                                    <a href="">
-                                        <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button>
-                                    </a> 
+                                    <a href="{{route('categories.edit', $player->id)}}">
+                                        <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
+                                    </a>
                                 </th>
                                 <th scope="col table-secondary">
-                                    <form action="" method="POST">
+                                    <form action="{{route('categories.destroy', $player->id)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-delete"><i class="bi bi-trash3"></i></button>
                                     </form>
                                 </th>
                             </tr>
-                            
-                            {{-- @endforeach --}}
+                            @endforeach
                         </table>
                     </div>
                 </div>
