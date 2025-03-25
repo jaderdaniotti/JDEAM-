@@ -49,7 +49,7 @@ class PlayerController extends Controller
      */
     public function edit(Player $player)
     {
-        //
+        return view('players.edit', compact('player'));
     }
 
     /**
@@ -57,7 +57,11 @@ class PlayerController extends Controller
      */
     public function update(UpdatePlayerRequest $request, Player $player)
     {
-        //
+        $player->update([
+            'name' => $request->name,
+        ]);
+
+        return to_route('gestione');
     }
 
     /**

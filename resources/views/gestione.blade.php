@@ -31,7 +31,9 @@
                                 <th scope="col table-secondary">{{$category->id}}</th>
                                 <th scope="col table-secondary">{{$category->name}}</th>
                                 <th scope="col table-secondary">
-                                    <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
+                                    <a href="{{route('categories.edit', $category->id)}}">
+                                        <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
+                                    </a>
                                 </th>
                                 <th scope="col table-secondary">
                                     <form action="{{route('categories.destroy', $category->id)}}" method="POST">
@@ -77,7 +79,9 @@
                                     <th scope="col table-secondary">{{$platform->id}}</th>
                                     <th scope="col table-secondary">{{$platform->name}}</th>
                                     <th scope="col table-secondary">
-                                        <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
+                                        <a href="{{route('platforms.edit', $platform->id)}}">
+                                            <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
+                                        </a>
                                     </th>
                                     <th scope="col table-secondary">
                                         <form action="{{route('platforms.destroy', $platform->id)}}" method="POST">
@@ -123,7 +127,9 @@
                                 <th scope="col table-secondary">{{$player->id}}</th>
                                 <th scope="col table-secondary">{{$player->name}}</th>
                                 <th scope="col table-secondary">
-                                    <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button> 
+                                    <a href="{{route('players.edit', $player->id)}}">
+                                        <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button>
+                                    </a> 
                                 </th>
                                 <th scope="col table-secondary">
                                     <form action="{{route('players.destroy', $player->id)}}" method="POST">
@@ -133,6 +139,7 @@
                                     </form>
                                 </th>
                             </tr>
+                            
                             @endforeach
                         </table>
                     </div>

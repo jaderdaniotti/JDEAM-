@@ -49,7 +49,7 @@ class PlatformController extends Controller
      */
     public function edit(Platform $platform)
     {
-        //
+        return view('platforms.edit', compact('platform'));
     }
 
     /**
@@ -57,7 +57,11 @@ class PlatformController extends Controller
      */
     public function update(UpdatePlatformRequest $request, Platform $platform)
     {
-        //
+        $platform->update([
+            'name' => $request->name,
+        ]);
+
+        return to_route('gestione');
     }
 
     /**
