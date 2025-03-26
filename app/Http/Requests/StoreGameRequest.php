@@ -22,10 +22,10 @@ class StoreGameRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required','string',],
-            'price' => ['required', 'integer'],
+            'name' => ['required', 'string',],
+            'price' => ['required'],
             'image' => ['mimes:png,jpg,jpeg,webp'],
-            'year' => ['required','integer'],
+            'year' => ['required', 'integer'],
         ];
     }
 }
