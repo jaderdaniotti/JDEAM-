@@ -29,14 +29,17 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
-        $path_image = $request->file('image')->store('covers', 'public');
-        $game= Game::create([
+        $path_image = '';
+        if ($request->hasFile('image')) {
+            $path_image = $request->file('image')->store('covers', 'public');
+        }
+        $game = Game::create([
             'name' => $request->name,
             'price' => $request->price,
             'year' => $request->year,
             'image' => $path_image,
         ]);
-        $game->categories()->attach($request->category_id);
+        $game->categories()->attach($request->categories);
         return to_route('gestione');
     }
 
