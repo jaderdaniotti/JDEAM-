@@ -149,7 +149,7 @@
             </div>
         </div>
 
-        <div class="row align-content-center d-flex">
+        <div class="row align-content-center d-flex mt-3">
             <div class="col-12 col-md-3 aside-left">
                 <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#modalCategory">
                     <i class="bi bi-bookmark"></i> CATEGORIE <i class="bi bi-bookmark"></i>
@@ -161,7 +161,6 @@
                     <i class="bi bi-person-workspace"></i> PLAYERS <i class="bi bi-person-workspace"></i>
                 </button>
             </div>
-            <div class="col-md-4"></div>
             <div class="col-12 col-md-8 aside-right">
                 <h1 class="text-center">Aggiungi un gioco</h1>
                 <hr>

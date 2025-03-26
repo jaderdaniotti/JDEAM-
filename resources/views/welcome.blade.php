@@ -79,53 +79,53 @@
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check5" value= "5">
                               <label class="form-check-label" for="check5"  >
-                                  >5$
+                                  &lt;5$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check10" value= "10">
                               <label class="form-check-label" for="check10"  >
-                                  >10$
+                                  &lt;10$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check15" value= "15">
                               <label class="form-check-label" for="check15"  >
-                                  >15$
+                                  &lt;15$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check20" value= "20">
                               <label class="form-check-label" for="check20"  >
-                                  >20$
+                                  &lt;20$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check25" value= "25">
                               <label class="form-check-label" for="check25"  >
-                                  >25$
+                                  &lt;25$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check30" value= "30">
                               <label class="form-check-label" for="check30"  >
-                                  >30$
+                                  &lt;30$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check50" value= "50">
                               <label class="form-check-label" for="check50"  >
-                                  >50$
+                                  &lt;50$
                               </label><br>
                               <input class="form-check-input" type="checkbox" id="check80" value= "80">
                               <label class="form-check-label" for="check80"  >
-                                  >80$
+                                  &lt;80$
                               </label><br>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-
+                </div>
             </div>
             <div class="col-12 col-lg-10 container-games">
               <div class="row justify-content-between">
                 @foreach ($games as $game)
-                <div class="card col-12 " >
+                <div class="card col-12 col-lg-4" >
                   <img src="{{Storage::url($game->image)}}" class="card-img-top" alt="...">
                   <div class="card-body text-center">
                     <h5 class="card-title agdasima-regular">{{$game->name}}</h5>
                     <h6>{{$game->price}}$</h6>
                     <a href="#" class="btn btn-submit">Vedi</a>
                   </div>
+                  <hr>
                 </div>
                 @endforeach
               </div>

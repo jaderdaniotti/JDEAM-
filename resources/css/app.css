@@ -238,11 +238,10 @@ nav i {
 
 /* #region ASIDE */
 .aside-left {
-    position: fixed;
     top: 25%;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0rem;
 }
 .aside-left button {
     margin: 1rem;
@@ -256,10 +255,9 @@ nav i {
 }
 
 .aside-right {
-    margin-top: 2vh;
     justify-content: center;
     color: whitesmoke;
-    padding: 1.5rem;
+    padding: 0rem 1.5rem;
     border-radius: 12px;
 }
 .aside-right button {
@@ -299,7 +297,6 @@ nav i {
 }
 
 .container-games .card {
-    width: 33%;
     padding: 1rem;
     background-color: #1B2838;
     color: whitesmoke;
