@@ -282,11 +282,7 @@ nav i {
     border: #7A8B9D 2px solid;
     margin: 1rem;
 }
-
-
 /* #endregion */
-
-
 
 /* #region container games */
 .container-games {
@@ -310,44 +306,8 @@ nav i {
 
 /* #endregion */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
     .aside-left {
         position: relative;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* {}
