@@ -199,7 +199,7 @@
                                 placeholder="Inserisci il nome della categoria...">
 
                             <label for="name">Prezzo</label>
-                            <input type="number" name="price" class="form-control"
+                            <input type="text" name="price" class="form-control"
                                 placeholder="Inserisci il nome della categoria...">
 
                             <label for="name">Copertina</label>
@@ -222,7 +222,7 @@
                                         @foreach ($gamecategories as $gamecategory)
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="categories[]"
-                                                    value= "{{ $gamecategory->name }}">
+                                                    value= "{{ $gamecategory->id }}">
                                                 <label class="form-check-label">
                                                     {{ $gamecategory->name }}
                                                 </label>
@@ -245,7 +245,7 @@
                                         @foreach ($platforms as $platform)
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="categories[]"
-                                                    value= "{{ $platform->name }}">
+                                                    value= "{{ $platform->id }}">
                                                 <label class="form-check-label">
                                                     {{ $platform->name }}
                                                 </label>
@@ -268,7 +268,7 @@
                                         @foreach ($players as $player)
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" name="categories[]"
-                                                    value= "{{ $player->name }}">
+                                                    value= "{{ $player->id }}">
                                                 <label class="form-check-label">
                                                     {{ $player->name }}
                                                 </label>

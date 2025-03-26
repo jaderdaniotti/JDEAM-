@@ -29,6 +29,7 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
+        
         $path_image = '';
         if ($request->hasFile('image')) {
             $path_image = $request->file('image')->store('covers', 'public');
