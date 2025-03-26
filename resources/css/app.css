@@ -202,11 +202,20 @@ nav i {
 
 /* #endregion */
 
+/* #region form creazione game */
 .gestione-form-modal {
     color: white;
     border-radius: 10px;
     font-size: 1.3rem;
     width: 80%;
+}
+
+.gestione-form .col-4 {
+    border-radius: 13px;
+    display: flex;
+    padding: 0rem;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .edit-col {
@@ -215,10 +224,52 @@ nav i {
     align-items: center;
 }
 
-.form-scroll {
-    overflow-y: ;
+/* #endregion */
+
+/* #region form edit game */
+.form-games-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: whitesmoke;
+    padding: 1rem 2rem;
+    border-radius: 12px;
 }
 
+.form-games-edit button {
+    width: max-content;
+}
+
+.form-games-edit button:hover {
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+    color: whitesmoke;
+}
+
+.form-games-edit input {
+    width: 90%;
+}
+
+.form-games-edit .form-check-input {
+    width: 1rem;
+}
+
+.form-games-edit .accordion-item {
+    background-color: #203154;
+}
+
+.form-games-edit .accordion-button {
+    background-color: #203154;
+    border: #7A8B9D 2px solid;
+    margin: 1rem;
+}
+
+.accordion-item .btn {
+    width: 8rem;
+    text-align: left;
+}
+
+/* #endregion */
 
 /* #endregion */
 
@@ -237,12 +288,15 @@ nav i {
 /* #endregion */
 
 /* #region ASIDE */
+
+/* #region LEFT */
 .aside-left {
     top: 25%;
     display: flex;
     flex-direction: column;
     padding: 0rem;
 }
+
 .aside-left button {
     margin: 1rem;
     padding: 2rem;
@@ -254,34 +308,54 @@ nav i {
     color: whitesmoke;
 }
 
+/* #endregion */
+/* #region RIGHT */
 .aside-right {
     justify-content: center;
     color: whitesmoke;
-    padding: 0rem 1.5rem;
+    padding: 1rem 2rem;
+    border-left: #7A8B9D 5px solid;
+    border-right: #7A8B9D 5px solid;
+    border: #7A8B9D 5px solid;
     border-radius: 12px;
+    margin-left: 3rem;
 }
+
 .aside-right button {
     width: max-content;
 }
+
 .aside-right button:hover {
     transition: all 0.1s linear;
     transform: scale(1.02);
     color: whitesmoke;
 }
+
 .aside-right input {
     width: 90%;
 }
+
 .aside-right .form-check-input {
     width: 1rem;
 }
+
 .aside-right .accordion-item {
     background-color: #203154;
 }
+
 .aside-right .accordion-button {
     background-color: #203154;
     border: #7A8B9D 2px solid;
     margin: 1rem;
 }
+
+.accordion-item .btn {
+    width: 8rem;
+    text-align: left;
+}
+
+/* #endregion */
+
 /* #endregion */
 
 /* #region container games */

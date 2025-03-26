@@ -164,13 +164,13 @@
         <div class="row align-content-center d-flex mt-3">
             <div class="col-12 col-md-3 aside-left">
                 <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#modalCategory">
-                    <i class="bi bi-bookmark"></i> CATEGORIE <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-bookmark"></i> AGGIUNGI CATEGORIE <i class="bi bi-bookmark"></i>
                 </button>
                 <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#modalPlatform">
-                    <i class="bi bi-pc-display"></i> PIATTAFORME <i class="bi bi-pc-display"></i>
+                    <i class="bi bi-pc-display"></i> AGGIUNGI PIATTAFORME <i class="bi bi-pc-display"></i>
                 </button>
                 <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#modalPlayer">
-                    <i class="bi bi-person-workspace"></i> PLAYERS <i class="bi bi-person-workspace"></i>
+                    <i class="bi bi-person-workspace"></i> AGGIUNGI PLAYERS <i class="bi bi-person-workspace"></i>
                 </button>
             </div>
             <div class="col-12 col-md-8 aside-right">
@@ -192,28 +192,29 @@
                         <div class="col-8">
                             <label for= "name">Nome del gioco</label>
                             <input type="text" name="name" class="form-control"
-                                placeholder="Inserisci il nome della categoria...">
+                                placeholder="Inserisci il nome del gioco...">
 
                             <label for="name">Anno di pubblicazione</label>
                             <input type="number" name="year" class="form-control"
-                                placeholder="Inserisci il nome della categoria...">
+                                placeholder="Inserisci l'anno di pubblicazione...">
 
                             <label for="name">Prezzo</label>
                             <input type="text" name="price" class="form-control"
-                                placeholder="Inserisci il nome della categoria...">
+                                placeholder="Inserisci il prezzo...">
 
                             <label for="name">Copertina</label>
                             <input type="file" name="image" class="form-control"
-                                placeholder="Inserisci il nome della categoria...">
+                                placeholder="Inserisci la foto della copertina...">
                         </div>
 
                         <div class="col-4">
+                            <h3>Filtri</h3>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class=" collapsed btn" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseCategory" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
-                                        Categorie
+                                        Categorie <i class="bi bi-plus-lg"></i>
                                     </button>
                                 </h2>
                                 <div id="flush-collapseCategory" class="accordion-collapse collapse"
@@ -236,7 +237,7 @@
                                     <button class="btn collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapsePlatform" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
-                                        Piattaforma
+                                        Piattaforma <i class="bi bi-plus-lg"></i>
                                     </button>
                                 </h2>
                                 <div id="flush-collapsePlatform" class="accordion-collapse collapse"
@@ -259,7 +260,7 @@
                                     <button class="btn collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapsePlayer" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
-                                        Player
+                                        Player <i class="bi bi-plus-lg"></i>
                                     </button>
                                 </h2>
                                 <div id="flush-collapsePlayer" class="accordion-collapse collapse"
@@ -284,6 +285,43 @@
                     </div>
                     <hr>
                 </form>
+            </div>
+        </div>
+
+            <div class="container">
+                <div class="row mt-5">
+                    <table class="table table-secondary  ">
+                        <tr class="table table-secondary">
+                            <th scope="col table-secondary">ID</th>
+                            <th scope="col table-secondary">NOME</th>
+                            <th scope="col table-secondary">PREZZO</th>
+                            <th scope="col table-secondary">ANNO</th>
+                            <th scope="col table-secondary">MODIFICA</th>
+                            <th scope="col table-secondary">ELIMINA</th>
+                        </tr>
+                        @foreach ($games as $game)
+                            <tr class="table table-secondary">
+                                <th scope="col table-secondary">#{{ $game->id }}</th>
+                                <th scope="col table-secondary">{{ $game->name }}</th>
+                                <th scope="col table-secondary">{{ $game->price }}</th>
+                                <th scope="col table-secondary">{{ $game->year }}</th>
+                                <th scope="col table-secondary">
+                                    <a href="{{ route('games.edit', $game->id) }}">
+                                        <button class="btn btn-edit"><i class="bi bi-pencil-square"></i></button>
+                                    </a>
+                                </th>
+                                <th scope="col table-secondary">
+                                    <form action="{{ route('categories.destroy', $player->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-delete"><i
+                                                class="bi bi-trash3"></i></button>
+                                    </form>
+                                </th>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>  
             </div>
         </div>
     </div>
