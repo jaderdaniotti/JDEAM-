@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-10 container-games">
-              <div class="row justify-content-between">
+              <div class="row ">
                 @foreach ($games as $game)
                 <div class="card col-12 col-lg-4" >
                   <img src="{{Storage::url($game->image)}}" class="card-img-top" alt="...">
@@ -124,6 +124,16 @@
                     <h5 class="card-title agdasima-regular">{{$game->name}}</h5>
                     <h6>{{$game->price}}$</h6>
                     <a href="#" class="btn btn-submit">Vedi</a>
+                  </div>
+                  <hr>
+                </div>
+                @endforeach
+                @foreach ($apigames as $api)
+                <div class="card col-12 col-lg-4" >
+                  <img src="{{$api['thumbnail']}}" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                    <h5 class="card-title agdasima-regular">{{$api['title']}}</h5>
+                    <a href="/dettaglio/{{$api['id']}}" class="btn btn-submit">Vedi</a>
                   </div>
                   <hr>
                 </div>

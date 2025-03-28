@@ -77,13 +77,15 @@
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         @foreach ($platforms as $platform)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="categories[]"
-                                                    value= "{{ $platform->id }}">
-                                                <label class="form-check-label">
-                                                    {{ $platform->name }}
-                                                </label>
-                                            </div>
+                                        <div class="form-check">
+                                            <input 
+                                            @if ($game->categories->contains('id', $platform->id)) checked @endif
+                                            class="form-check-input" type="checkbox" name="categories[]" id="category_id_{{$platform->id}}"
+                                                value= "{{ $platform->id }}">
+                                            <label class="form-check-label">
+                                                {{ $platform->name }}
+                                            </label>
+                                        </div>
                                         @endforeach
                                     </div>
                                 </div>
@@ -100,13 +102,15 @@
                                     data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         @foreach ($players as $player)
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" name="categories[]"
-                                                    value= "{{ $player->id }}">
-                                                <label class="form-check-label">
-                                                    {{ $player->name }}
-                                                </label>
-                                            </div>
+                                        <div class="form-check">
+                                            <input 
+                                            @if ($game->categories->contains('id', $player->id)) checked @endif
+                                            class="form-check-input" type="checkbox" name="categories[]" id="category_id_{{$player->id}}"
+                                                value= "{{ $player->id }}">
+                                            <label class="form-check-label">
+                                                {{ $player->name }}
+                                            </label>
+                                        </div>
                                         @endforeach
                                     </div>
                                 </div>

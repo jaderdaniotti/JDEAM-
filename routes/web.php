@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Apigames;
 use App\Http\Controllers\Website;
 use App\Http\Controllers\CategoryController;
 use App\Models\Game;
@@ -8,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Website::class,'index'])->name('home');
 Route::get('/jdeam/gestione', [Website::class, 'gestione'])->name('gestione')->middleware('auth');
+Route::get('/dettaglio/{id}', [Apigames::class, 'show']);
 
 //rotte edit
 Route::get("/categories/{category}/edit", [CategoryController::class, 'edit'])->name('categories.edit')->middleware('auth');
@@ -19,6 +21,7 @@ Route::post('/games/save', [GameController::class,'store'])->name('games.store')
 
 //rotte delete
 Route::delete('/categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories.destroy');
+Route::delete('/games/{game}/delete', [GameController::class, 'destroy'])->name('games.destroy');
 
 //rotte update
 Route::put('/categories/{category}/update', [CategoryController::class, 'update'])->name('categories.update');

@@ -380,6 +380,39 @@ nav i {
 
 /* #endregion */
 
+/* #region GAMES DETAILS */
+#game-details .card {
+    background-color: #203154;
+    color: whitesmoke;
+    border: whitesmoke 2px solid;
+}
+
+#game-details .card:hover {
+    transition: all 0.2s linear;
+    transform: scale(1.01);
+}
+
+#game-details .btn {
+    background-color: #203154;
+    color: whitesmoke;
+    border: whitesmoke 2px solid;
+}
+
+#game-details .btn:hover {
+    transition: transform 0.2s linear;
+    transform: scale(1.05);
+    background-color: #66BBD0;
+    color: #203154;
+}
+
+/* #endregion */
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
     .aside-left {
         position: relative;

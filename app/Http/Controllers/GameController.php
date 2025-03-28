@@ -74,13 +74,13 @@ class GameController extends Controller
         if ($request->hasFile('image')) {
             $path_image = $request->file('image')->store('covers', 'public');
         }
-        $game = Game::create([
+        $game->update([
             'name' => $request->name,
             'price' => $request->price,
             'year' => $request->year,
             'image' => $path_image,
         ]);
-        $game->categories()->detach();
+        $game->categories()->sync($request->categories);
         $game->categories()->attach($request->categories);
         return to_route('gestione');
     }
@@ -90,6 +90,7 @@ class GameController extends Controller
      */
     public function destroy(Game $game)
     {
+        $game->categories()->detach();
         $game->delete();
         return to_route('gestione');
     }
