@@ -314,10 +314,7 @@ nav i {
     justify-content: center;
     color: whitesmoke;
     padding: 1rem 2rem;
-    border-left: #7A8B9D 5px solid;
-    border-right: #7A8B9D 5px solid;
-    border: #7A8B9D 5px solid;
-    border-radius: 12px;
+
     margin-left: 3rem;
 }
 
@@ -370,7 +367,7 @@ nav i {
     padding: 1rem;
     background-color: #1B2838;
     color: whitesmoke;
-    border: #171D25 0px solid;
+    border: none !important;
 }
 
 .container-games .card:hover {
@@ -378,13 +375,14 @@ nav i {
     transform: scale(1.02);
 }
 
+
 /* #endregion */
 
 /* #region GAMES DETAILS */
 #game-details .card {
     background-color: #203154;
     color: whitesmoke;
-    border: whitesmoke 2px solid;
+    border: none !important;
 }
 
 #game-details .card:hover {
@@ -416,5 +414,8 @@ nav i {
 @media screen and (max-width: 768px) {
     .aside-left {
         position: relative;
+    }
+    .aside-right{
+        margin-left: 0rem;
     }
 }

@@ -119,9 +119,9 @@
               <div class="row ">
                 @foreach ($games as $game)
                 <div class="card col-12 col-lg-4" >
-                  <img src="{{Storage::url($game->image)}}" class="card-img-top" alt="...">
+                  <img src="{{Storage::url($game->image)}}" class="" alt="..." width="100%">
                   <div class="card-body text-center">
-                    <h5 class="card-title agdasima-regular">{{$game->name}}</h5>
+                    <h5 id="gametitle" class="card-title "><span class="agdasima-regular">{{$game->name}}</span></h5>
                     <h6>{{$game->price}}$</h6>
                     <a href="#" class="btn btn-submit">Vedi</a>
                   </div>
@@ -129,10 +129,10 @@
                 </div>
                 @endforeach
                 @foreach ($apigames as $api)
-                <div class="card col-12 col-lg-4" >
+                <div class="card col-12 col-lg-4 gamecard" >
                   <img src="{{$api['thumbnail']}}" class="card-img-top" alt="...">
                   <div class="card-body text-center">
-                    <h5 class="card-title agdasima-regular">{{$api['title']}}</h5>
+                    <h5 id="gametitle" class="card-title "><span class="agdasima-regular">{{$api['title']}}</span></h5>
                     <a href="/dettaglio/{{$api['id']}}" class="btn btn-submit">Vedi</a>
                   </div>
                   <hr>
@@ -143,4 +143,21 @@
         </div>
     </div>
 </section>
+<script>
+function searchFunction(){
+    let SearchInput = document.getElementById('searchInput');
+    let gameCards = document.querySelectorAll('.card, .gamecard');
+    let gametitle = document.querySelectorAll('.card .card-title, .gamecard .card-title');
+    let filter = SearchInput.value.toUpperCase();
+    for (let i = 0; i < gametitle.length; i++) {
+        span = gametitle[i].getElementsByTagName("span")[0];
+        txtValue = span.textContent || span.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            gameCards[i].style.display = "";
+        } else {
+            gameCards[i].style.display = "none";
+        }
+    };
+}
+</script>
 </x-layout>

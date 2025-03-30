@@ -40,7 +40,7 @@
                 <div class="col-12 ">
                     <div class="card">
                         <div class="card-body ">
-                            <h4 class="card-title text-center">Description</h4>
+                            <h4 class="card-title text-center">Descrizione</h4>
                             <p class="card-text">{{ $game['description'] }}</p>
                         </div>
                     </div>
@@ -52,11 +52,11 @@
                 <div class="col-md-6">
                     <div class="card h-100">
                         <div class="card-body ">
-                            <h4 class="card-title text-center">Game Information</h4>
+                            <h4 class="card-title text-center">Informazioni</h4>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><strong>Publisher:</strong> {{ $game['publisher'] }}</li>
-                                <li class="list-group-item"><strong>Developer:</strong> {{ $game['developer'] }}</li>
-                                <li class="list-group-item"><strong>Release Date:</strong> {{ $game['release_date'] }}</li>
+                                <li class="list-group-item"><strong>Editore:</strong> {{ $game['publisher'] }}</li>
+                                <li class="list-group-item"><strong>Sviluppatore:</strong> {{ $game['developer'] }}</li>
+                                <li class="list-group-item"><strong>Data di rilascio:</strong> {{ $game['release_date'] }}</li>
                             </ul>
                         </div>
                     </div>
@@ -65,13 +65,13 @@
                     @if (isset($game['minimum_system_requirements']) && $game['minimum_system_requirements'])
                     <div class="card h-100">
                         <div class="card-body ">
-                            <h4 class="card-title text-center">System Requirements</h4>
+                            <h4 class="card-title text-center">Requisiti minimi</h4>
                             <ul class="list-group list-group-flush mt-1">
                                 <li class="list-group-item"><strong>OS:</strong> {{ $game['minimum_system_requirements']['os'] }}</li>
-                                <li class="list-group-item"><strong>Processor:</strong> {{ $game['minimum_system_requirements']['processor'] }}</li>
-                                <li class="list-group-item"><strong>Memory:</strong> {{ $game['minimum_system_requirements']['memory'] }}</li>
-                                <li class="list-group-item"><strong>Graphics:</strong> {{ $game['minimum_system_requirements']['graphics'] }}</li>
-                                <li class="list-group-item"><strong>Storage:</strong> {{ $game['minimum_system_requirements']['storage'] }}</li>
+                                <li class="list-group-item"><strong>Processore:</strong> {{ $game['minimum_system_requirements']['processor'] }}</li>
+                                <li class="list-group-item"><strong>Memoria:</strong> {{ $game['minimum_system_requirements']['memory'] }}</li>
+                                <li class="list-group-item"><strong>Grafica:</strong> {{ $game['minimum_system_requirements']['graphics'] }}</li>
+                                <li class="list-group-item"><strong>Memoria:</strong> {{ $game['minimum_system_requirements']['storage'] }}</li>
                             </ul>
                             @else
                             <div></div>
@@ -85,7 +85,7 @@
             <div class="row mb-5">
                 <div class="col-12 text-center">
                     <a href="{{ $game['game_url'] }}" class="btn btn-submit btn-lg me-3" target="_blank">
-                        Play Now
+                        Vai al sito
                     </a>
                 </div>
             </div>

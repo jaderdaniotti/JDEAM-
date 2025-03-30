@@ -32,8 +32,8 @@
         </ul>
         
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Cerca un prodotto..." aria-label="Search">
-          <button class="btn btn-submit" type="submit">Cerca</button>
+          <input class="form-control me-2" type="text" placeholder="Cerca un prodotto..." aria-label="Search" id="searchInput" onkeyup="searchFunction()">
+          <a href="" id="searchButton"><button class="btn btn-submit" type="submit">Cerca</button></a>
         </form> <br>
         <div class="d-flex mx-2  justify-content-center">
           {{-- logout --}}
