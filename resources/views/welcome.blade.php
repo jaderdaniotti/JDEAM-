@@ -139,6 +139,7 @@
                 </div>
                 @endforeach
               </div>
+              {{ $apigames->links() }}
             </div>
         </div>
     </div>
