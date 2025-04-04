@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Http;
-use App\Models\ApiGame; // Import the ApiGame model
+use App\Models\ApiGame;
 
 class ApigamesSeeder extends Seeder
 {
@@ -13,6 +13,9 @@ class ApigamesSeeder extends Seeder
         $response = Http::get('https://www.freetogame.com/api/games');
         $data = $response->json();
         foreach ($data as $game) {
+            if($game['id'] == '405'){
+                $game['release_date'] = '2023-10-01';
+            }
             ApiGame::create([
                 'game_id' => $game['id'],
                 'title' => $game['title'],

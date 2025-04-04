@@ -1,8 +1,5 @@
 import './bootstrap';
 import 'bootstrap';
-
-
-
 function searchFunction(){
     let SearchInput = document.getElementById('searchInput');
     let gameCards = document.querySelectorAll('.card, .gamecard');
@@ -19,3 +16,47 @@ function searchFunction(){
     };
 }
 
+const apigames = await fetch("http://localhost:8000/api/games")
+    .then(response => response.json())
+    .catch(error => console.error(error));
+    console.log(apigames);
+
+const urlcategories = await fetch("http://localhost:8000/api/categories")
+    .then(response => response.json())
+    .catch(error => console.error(error));
+    // console.log(urlcategories);
+
+const SEARCHINPUTNAVBAR = document.getElementById('searchInput');
+const DIVSEARCHEDGAMES = document.getElementById('risultatiRicerca');
+SEARCHINPUTNAVBAR.addEventListener('keyup', function() {
+    let searchResult = SEARCHINPUTNAVBAR.value.toLowerCase();
+    DIVSEARCHEDGAMES.innerHTML = ''; // Pulisci i risultati precedenti
+
+    if (searchResult.length > 0) {
+        DIVSEARCHEDGAMES.classList.remove('d-none');
+        apigames.forEach(game => {
+             game.title = game.title.toLowerCase();
+            if (game.title.includes(searchResult)) {
+                let gameDiv = document.createElement('div');
+                gameDiv.classList.add();
+                gameDiv.innerHTML = `
+
+                <div class="row align-items-center">
+                <a href="">
+                    <img src="${game.thumbnail}" alt="" class="img-gameThumbnail rounded">
+                </a>
+                <a href="">
+                    <h6 class="h6-gameThumbnail">${game.title}</h6>
+                </a>
+                </div>
+              `;
+                DIVSEARCHEDGAMES.appendChild(gameDiv);
+            }
+        });
+        if (DIVSEARCHEDGAMES.innerHTML === '') {
+            DIVSEARCHEDGAMES.classList.add('d-none');
+        }
+    } else {
+        DIVSEARCHEDGAMES.classList.add('d-none');
+    }
+});

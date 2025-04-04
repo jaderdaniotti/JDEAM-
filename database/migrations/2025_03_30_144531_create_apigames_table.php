@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('apigames', function (Blueprint $table) {
             $table->id();
-            $table->integer('game_id')->unique();
+            $table->integer('game_id');
             $table->string('title');
             $table->string('thumbnail');
             $table->text('short_description')->nullable();

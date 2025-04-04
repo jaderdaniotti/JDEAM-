@@ -49,6 +49,10 @@ body {
     color: #66BBD0;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 /* #endregion */
 
 
@@ -94,15 +98,64 @@ nav i {
     color: white;
 }
 
+/* #region RISULTATI RICERCA */
+#risultatiRicerca{
+    padding: 0.4rem;
+}
+
+#risultatiRicerca .row{
+    min-width: max-content;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 0.3rem;
+    border: white 1px solid;
+    border-radius: 12px;
+    padding: 0.8rem;
+}
+#risultatiRicerca .row:hover{
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+}
+
+#risultatiRicerca .row a{
+    width: max-content;
+    color: white;
+    text-decoration: none;
+}
+#risultatiRicerca .row a:hover{
+    color: #66BBD0;
+    transition: transform 0.1s linear;
+    transform: scale(1.02);
+}
+
+.img-gameThumbnail {
+    width: 10vw;
+    height: auto;
+}
+
+.h6-gameThumbnail {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+/* #endregion */
+
+
 .accordion-button {
     background-color: #171d25;
     font-size: 1.2rem;
     color: white;
+
 }
 
 .accordion-item {
     background-color: #171D25;
     color: white;
+}
+
+.accordion-body {
+    max-height: 50vh;
+    overflow-y: auto;
 }
 
 /* #endregion */
@@ -200,6 +253,9 @@ nav i {
     color: white;
 }
 
+h4{
+    
+}
 /* #endregion */
 
 /* #region form creazione game */
@@ -376,6 +432,7 @@ nav i {
 }
 
 
+
 /* #endregion */
 
 /* #region GAMES DETAILS */
@@ -415,7 +472,22 @@ nav i {
     .aside-left {
         position: relative;
     }
-    .aside-right{
+
+    .aside-right {
         margin-left: 0rem;
     }
+}
+
+.page-item.active .page-link {
+    background-color: #203154;
+    border-color: whitesmoke;
+}
+
+.page-link {
+    background-color: #1B2838;
+}
+
+.pagination .disabled .page-link {
+    background-color: #1B2838;
+    color: #7A8B9D;
 }

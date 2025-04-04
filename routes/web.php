@@ -26,3 +26,5 @@ Route::delete('/games/{game}/delete', [GameController::class, 'destroy'])->name(
 //rotte update
 Route::put('/categories/{category}/update', [CategoryController::class, 'update'])->name('categories.update');
 Route::put('/games/{game}/update', [GameController::class, 'update'])->name('games.update');
+
+
