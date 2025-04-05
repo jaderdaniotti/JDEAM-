@@ -8,6 +8,7 @@ use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\Paginator;
+use App\Models\User;
 
 
 class Website extends Controller
@@ -33,5 +34,8 @@ class Website extends Controller
         return view('welcome', compact('categories',  'games', 'platforms', 'gamecategories', 'players', 'apigames'));
 
     }
-    
+    public function profile(User $user, $id){
+        $user = User::find($id);
+        return view('profile', compact('user'));
+    }
 }

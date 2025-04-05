@@ -22,10 +22,10 @@
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="#">Informazioni</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active agdasima-regular" href="#">Assistenza</a>
-              </li>
               @auth
+              <li class="nav-item">
+                <a class="nav-link active agdasima-regular" href="#">Area personale</a>
+              </li>
               @if(Auth::user()->isAdmin)
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('gestione')}}">Gestione</a>
@@ -82,6 +82,8 @@
   </nav>
   @auth
   <div id="showPersonalArea" class="rounded-circle">
-    <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="User Image" height="60" class="rounded-circle">
+    <a href="{{route('profile', Auth::user()->id)}}">
+      <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="User Image" height="60" class="rounded-circle">
+    </a>
   </div>
   @endauth

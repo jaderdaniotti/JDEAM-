@@ -100,32 +100,42 @@ function createCard(games){
     });
 }
 
-//chiamata checkbox
-// const checkboxes = document.querySelectorAll('.checkboxcategory');
-// let cardApigames = document.querySelectorAll('.gamecard');
-// let indexgames = document.getElementById('index-games');
+document.addEventListener('DOMContentLoaded', function() {
+    const imageInput = document.getElementById('imageUser');
+    const imagePreviewContainer = document.getElementById('labelImageUser');
 
-// checkboxes.forEach(checkbox => {
-//   checkbox.addEventListener('click', () => {
-//     if (checkbox.checked) {
-//       cardApigames.forEach(card=>{
-//         card.style.display = 'none';
-//       })
-//       apigames = apigames.filter(game => {
-//         return game.genre.toLowerCase() === checkbox.value.toLowerCase();
-//       })
-//       console.log(apigames);
-//         createCard(apigames);
-      
-//     } else {
-//         console.log('Checkbox non selezionato');
-//         apigames;
-//         cardApigames.forEach(card=>{
-//             card.style.display = 'block';
-//           })
-//     }
-//   });
-// });
+    imageInput.addEventListener('change', function() {
+        // Rimuovi eventuali anteprime precedenti
+        imagePreviewContainer.innerHTML = '';
+
+        const file = this.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                // Crea un elemento immagine per l'anteprima
+                const previewImage = document.createElement('img');
+                previewImage.src = e.target.result;
+                previewImage.style.maxWidth = '150px'; // Imposta una larghezza massima per l'anteprima
+                previewImage.style.height = 'auto';
+                previewImage.classList.add('mt-2'); // Aggiungi una classe per eventuale styling (margin-top)
+
+                // Aggiungi l'immagine al contenitore dell'anteprima
+                imagePreviewContainer.appendChild(previewImage);
+            }
+
+            // Leggi il file come URL di dati (data URL)
+            reader.readAsDataURL(file);
+        } else {
+            // Se nessun file è selezionato, puoi mostrare un messaggio o lasciare vuoto
+            imagePreviewContainer.textContent = 'Nessuna immagine selezionata.';
+        }
+    });
+});
+//funzione per image nel register
+
+
 
 
 
