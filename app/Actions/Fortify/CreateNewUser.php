@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,12 +30,20 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
+            'image' => ['required', 'image', 'max:2048'],
         ])->validate();
+
+        if (isset($input['image']) && $input['image'] instanceof \Illuminate\Http\UploadedFile) {
+            $imagePath = $input['image']->store('covers', 'public');
+        } else {
+            throw new \InvalidArgumentException('Invalid image file provided.');
+        }
 
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'image' => $imagePath,
         ]);
     }
 }

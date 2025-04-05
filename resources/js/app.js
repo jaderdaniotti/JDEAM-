@@ -101,31 +101,31 @@ function createCard(games){
 }
 
 //chiamata checkbox
-const checkboxes = document.querySelectorAll('.checkboxcategory');
-let cardApigames = document.querySelectorAll('.gamecard');
-let indexgames = document.getElementById('index-games');
+// const checkboxes = document.querySelectorAll('.checkboxcategory');
+// let cardApigames = document.querySelectorAll('.gamecard');
+// let indexgames = document.getElementById('index-games');
 
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener('click', () => {
-    if (checkbox.checked) {
-      cardApigames.forEach(card=>{
-        card.style.display = 'none';
-      })
-      apigames = apigames.filter(game => {
-        return game.genre.toLowerCase() === checkbox.value.toLowerCase();
-      })
-      console.log(apigames);
-        createCard(apigames);
+// checkboxes.forEach(checkbox => {
+//   checkbox.addEventListener('click', () => {
+//     if (checkbox.checked) {
+//       cardApigames.forEach(card=>{
+//         card.style.display = 'none';
+//       })
+//       apigames = apigames.filter(game => {
+//         return game.genre.toLowerCase() === checkbox.value.toLowerCase();
+//       })
+//       console.log(apigames);
+//         createCard(apigames);
       
-    } else {
-        console.log('Checkbox non selezionato');
-        apigames;
-        cardApigames.forEach(card=>{
-            card.style.display = 'block';
-          })
-    }
-  });
-});
+//     } else {
+//         console.log('Checkbox non selezionato');
+//         apigames;
+//         cardApigames.forEach(card=>{
+//             card.style.display = 'block';
+//           })
+//     }
+//   });
+// });
 
 
 

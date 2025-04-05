@@ -7,6 +7,7 @@
             <a class="nav-link active darker-grotesque text-dark" href="/">Jdeam</a>
 
         </div>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,9 +26,11 @@
                 <a class="nav-link active agdasima-regular" href="#">Assistenza</a>
               </li>
               @auth
+              @if(Auth::user()->isAdmin)
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('gestione')}}">Gestione</a>
               </li>
+              @endif
               @endauth
         </ul>
         
@@ -71,8 +74,14 @@
           <a href="{{route('register')}}" class="btn"><i class="bi bi-person-add"></i></a>
           <a href="{{route('login')}}" class="btn mx-1"><i class="bi bi-box-arrow-in-right"></i></a>
           @endguest
-
           </div>
+
       </div>
+
     </div>
   </nav>
+  @auth
+  <div id="showPersonalArea" class="rounded-circle">
+    <img src="{{ asset('storage/' . Auth::user()->image) }}" alt="User Image" height="60" class="rounded-circle">
+  </div>
+  @endauth
