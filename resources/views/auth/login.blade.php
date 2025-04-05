@@ -10,14 +10,13 @@
             <label for="password" >Inserisci la tua password</label>
             <input type="password" name="password" class="form-control" placeholder="Inserisci la tua password...">
             <br>
-            <button type="submit" class="btn">Entra</button>
+            <button type="submit" class="btn ">Entra</button>
             <br>
-
+            <h4 class="text-white mt-1">Non sei ancora registrato? Clicca qui per registrarti
+                <a href="{{route('register')}}" class="text-white anim-rotate btn"><i class="bi bi-person-add"></i></a>
+            </h4>
         </form>
-        <div class="row">
-            <h4 >Non sei ancora registrato</h4>
-            <a href="{{route('register')}}">f</a>
-        </div>
+
 
     </div>
 </x-layout>

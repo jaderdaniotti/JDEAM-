@@ -60,6 +60,19 @@ class CategoriesSeeder extends Seeder
             'horror',
             'mmorts',
         ];
+        $platformNames = [
+            'windows' ,
+            'mac' ,
+            'linux' ,
+            'browser' ,
+            'ios' ,
+            'android' ,
+            'xbox-one' ,
+            'ps4' ,
+            'ps5' ,
+            'xbox-series-x' ,
+            'switch' ,
+        ];
         foreach ($categoryNames as $name) {
             Category::create([
                 'name' => $name,

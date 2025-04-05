@@ -17,6 +17,10 @@
             <input type="password" name="password_confirmation" class="form-control" placeholder="Conferma la tua password...">
             <br>
             <button type="submit" class="btn">Registrati</button>
+            <br>
+            <h4 class="text-white mt-1">Hai gia un account? Clicca qui per entrate
+                <a href="{{route('login')}}" class="btn anim-rotate mx-1"><i class="bi bi-box-arrow-in-right"></i></a>
+            </h4>
         </form>
     </div>
 </x-layout>

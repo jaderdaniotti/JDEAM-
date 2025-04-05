@@ -10,6 +10,7 @@ body {
 }
 
 /* #region SETTAGGI DONE */
+/* #region font */
 .darker-grotesque {
     font-family: "Darker Grotesque", sans-serif;
     font-optical-sizing: auto;
@@ -29,6 +30,9 @@ body {
     font-style: normal;
 }
 
+/* #endregion */
+
+/* #region background */
 .bg-navbar {
     background-color: #171D25;
 }
@@ -41,6 +45,9 @@ body {
     background-color: #1B2838;
 }
 
+/* #endregion */
+
+/* #region color */
 .color-grey-secondary {
     color: #7A8B9D;
 }
@@ -49,9 +56,32 @@ body {
     color: #66BBD0;
 }
 
+/* #endregion */
+
 .capitalize {
     text-transform: capitalize;
 }
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* #region ANIMROTATE */
+.anim-rotate {
+    text-align: center;
+    align-items: center;
+}
+
+.anim-rotate i {
+    font-size: 1.2rem;
+}
+
+.anim-rotate:hover {
+    transition: all 0.2s linear;
+    transform: rotate(5deg);
+
+}
+
+/* #endregion */
 
 /* #endregion */
 
@@ -98,49 +128,6 @@ nav i {
     color: white;
 }
 
-/* #region RISULTATI RICERCA */
-#risultatiRicerca{
-    padding: 0.4rem;
-}
-
-#risultatiRicerca .row{
-    min-width: max-content;
-    flex-wrap: nowrap;
-    justify-content: center;
-    margin-bottom: 0.3rem;
-    border: white 1px solid;
-    border-radius: 12px;
-    padding: 0.8rem;
-}
-#risultatiRicerca .row:hover{
-    transition: all 0.1s linear;
-    transform: scale(1.02);
-}
-
-#risultatiRicerca .row a{
-    width: max-content;
-    color: white;
-    text-decoration: none;
-}
-#risultatiRicerca .row a:hover{
-    color: #66BBD0;
-    transition: transform 0.1s linear;
-    transform: scale(1.02);
-}
-
-.img-gameThumbnail {
-    width: 10vw;
-    height: auto;
-}
-
-.h6-gameThumbnail {
-    font-size: 1.3rem;
-    text-transform: uppercase;
-}
-
-/* #endregion */
-
-
 .accordion-button {
     background-color: #171d25;
     font-size: 1.2rem;
@@ -156,6 +143,66 @@ nav i {
 .accordion-body {
     max-height: 50vh;
     overflow-y: auto;
+}
+
+/* #endregion */
+
+/* #region RISULTATI RICERCA */
+#risultatiRicerca {}
+
+#risultatiRicerca .alert {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+    background-color: #66BBD0;
+    border: none;
+    color: #171d25;
+}
+
+#risultatiRicerca .row {
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 0.3rem;
+    border: white 1px solid;
+    border-radius: 12px;
+    padding: 0.8rem;
+}
+
+#risultatiRicerca .row:hover {
+    transition: all 0.1s linear;
+    transform: scale(1.02);
+}
+
+#risultatiRicerca .row a {
+    width: max-content;
+    color: white;
+    text-decoration: none;
+}
+
+#risultatiRicerca .row a:hover {
+    color: #66BBD0;
+    transition: transform 0.1s linear;
+    transform: scale(1.02);
+}
+
+.img-gameThumbnail {
+    width: 10vw;
+    height: auto;
+}
+
+.h6-gameThumbnail {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    .img-gameThumbnail {
+        width: 100%;
+    }
+    .h6-gameThumbnail {
+        font-size: 4vw;
+    }
 }
 
 /* #endregion */
@@ -253,9 +300,6 @@ nav i {
     color: white;
 }
 
-h4{
-    
-}
 /* #endregion */
 
 /* #region form creazione game */
@@ -430,6 +474,26 @@ h4{
     transition: all 0.2s linear;
     transform: scale(1.02);
 }
+.description-card{
+    max-width: 100%; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#gametitle .btn{
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    border: 1px solid #66BBD0;
+    background-color: #66BBD0;
+    color: #203154;
+    cursor: default;
+    height: 
+}
+#gametitle .btn:hover{
+    transition: all 0.1s linear;
+    transform: scale(1.0);
+}
 
 
 
@@ -462,7 +526,22 @@ h4{
 
 /* #endregion */
 
+/* #region PAGINATION */
+.page-item.active .page-link {
+    background-color: #203154;
+    border-color: whitesmoke;
+}
 
+.page-link {
+    background-color: #1B2838;
+}
+
+.pagination .disabled .page-link {
+    background-color: #1B2838;
+    color: #7A8B9D;
+}
+
+/* #endregion */
 
 
 
@@ -476,18 +555,4 @@ h4{
     .aside-right {
         margin-left: 0rem;
     }
-}
-
-.page-item.active .page-link {
-    background-color: #203154;
-    border-color: whitesmoke;
-}
-
-.page-link {
-    background-color: #1B2838;
-}
-
-.pagination .disabled .page-link {
-    background-color: #1B2838;
-    color: #7A8B9D;
 }

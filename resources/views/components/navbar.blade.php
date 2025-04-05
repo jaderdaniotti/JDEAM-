@@ -32,7 +32,7 @@
         </ul>
         
         <form class="d-flex " role="search">
-          <input class="form-control me-2" type="text" placeholder="Cerca un prodotto..." aria-label="Search" id="searchInput" onkeyup="searchFunction()">
+          <input class="form-control me-2" type="text" placeholder="Cerca un prodotto..." aria-label="Search" id="searchInput" onkeyup="">
           <a href="" id="searchButton"><button class="btn btn-submit" type="submit">Cerca</button></a>
         </form> <br>
 

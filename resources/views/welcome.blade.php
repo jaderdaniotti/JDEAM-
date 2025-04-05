@@ -2,7 +2,7 @@
 <section class="header bg-section-claire ">
     <div class="container-fluid">
         <div class="row">
-          <div id="risultatiRicerca" class="text-white col-12 ">
+          <div id="risultatiRicerca" class="text-white container">
             <hr>
           </div>
             <div class="d-none d-lg-block d-xl-block col-2 col-md-none mt-2">
@@ -18,7 +18,7 @@
                           @foreach ($gamecategories as $gamecategory)
                           <div class="form-check">
                               <input class="form-check-input checkboxcategory" type="checkbox" 
-                              name="categories[]" value= "{{$gamecategory->name}}" >
+                              name="categories[]" value= "{{$gamecategory->name}}">
                               <label class="form-check-label capitalize"  >
                                   {{$gamecategory->name}}
                               </label>
@@ -232,7 +232,7 @@
               </div>
           </div>
             <div class="col-12 col-lg-10 container-games mt-2">
-              <div class="row ">
+              <div class="row" id="index-games">
 
                 @foreach ($games as $game)
                 <div class="card col-12 col-md-6 col-lg-4" >
@@ -245,64 +245,29 @@
                   <hr>
                 </div>
                 @endforeach
+                
                 @foreach ($apigames as $api)
-                <div class="card col-12 col-md-6 col-lg-4 gamecard product" >
+                <div class="card col-12 col-md-6 col-lg-4 gamecard p-1 product" >
                   <img src="{{$api['thumbnail']}}" class="card-img-top" alt="...">
-                  <div class="card-body text-center">
-                    <h5 id="gametitle" class="card-title "><span class="agdasima-regular">{{$api['title']}}</span></h5>
-                    <h6 id="gametitle" class="cardgame-genre " genre="{{$api->genre}}"><span class="agdasima-regular genre">{{$api->genre}}</span></h6>
+                  <div class="card-body text-center container p-2">
+                    <div class="row">
+                      <h5 id="gametitle" class="card-title uppercase"><span class="agdasima-regular">{{$api['title']}}</span></h5>
+                    </div>
+                      <h5 id="gametitle" class="card-title description-card"><span class="agdasima-regular ">{{$api['short_description']}}</span></h5>
+                    <h6 id="gametitle" class="cardgame-genre " genre="{{$api->genre}}"><span class="agdasima-regular genre btn">{{$api->genre}}</span></h6>
+                    <hr class="w-25 mx-auto">
                     <a href="/dettaglio/{{$api['id']}}" class="btn btn-submit">Vedi</a>
                   </div>
-                  <hr>
+                  <hr class="my-2">
                 </div>
                 @endforeach
               </div>
-              {{ $apigames->links() }}
+              <div class="gamecard">
+                {{ $apigames->links() }}
+              </div>
+
             </div>
         </div>
     </div>
 </section>
-<script>
-  
-function searchFunction(){
-    let SearchInput = document.getElementById('searchInput');
-    let gameCards = document.querySelectorAll('.card, .gamecard');
-    let gametitle = document.querySelectorAll('.card .card-title, .gamecard .card-title');
-    let filter = SearchInput.value.toUpperCase();
-    for (let i = 0; i < gametitle.length; i++) {
-        span = gametitle[i].getElementsByTagName("span")[0];
-        txtValue = span.textContent || span.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            gameCards[i].style.display = "";
-        } else {
-            gameCards[i].style.display = "none";
-        }
-    };
-}
-const apigames = await fetch("http://localhost:8000/api/games")
-    .then(response => response.json())
-    .catch(error => console.error(error));
-    console.log(apigames);
-
-const urlcategories = await fetch("http://localhost:8000/api/categories")
-    .then(response => response.json())
-    .catch(error => console.error(error));
-    // console.log(urlcategories);
-
-const SEARCHINPUTNAVBAR = document.getElementById('searchInput');
-const DIVSEARCHEDGAMES = document.getElementById('risultatiRicerca');
-SEARCHINPUTNAVBAR.addEventListener('keyup', function(){
-    let searchResult = SEARCHINPUTNAVBAR.value.toLowerCase();
-    DIVSEARCHEDGAMES.innerHTML = '';
-    apigames.forEach(game => {
-        game.title = game.title.toLowerCase();
-        if (game.title.includes(searchResult)) {
-            let gameDiv = document.createElement('div');
-            gameDiv.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4');
-            gameDiv.innerHTML = game.title;
-            SEARCHINPUTNAVBAR.appendChild(gameDiv);
-        }
-    });
-});
-</script>
 </x-layout>
