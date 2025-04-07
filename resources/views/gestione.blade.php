@@ -249,4 +249,5 @@
     </div>
   </div>
   </div>
+  <x-profileimg/>
 </x-layout>

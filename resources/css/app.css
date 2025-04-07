@@ -58,12 +58,16 @@ body {
 
 /* #endregion */
 
+/* #region font-size */
 .capitalize {
     text-transform: capitalize;
 }
+
 .uppercase {
     text-transform: uppercase;
 }
+
+/* #endregion */
 
 /* #region ANIMROTATE */
 .anim-rotate {
@@ -83,8 +87,17 @@ body {
 
 /* #endregion */
 
-/* #endregion */
+/* #region HEIGHT */
+.min-height-80 {
+    min-height: 80vh;
+}
 
+.min-height-50 {
+    min-height: 50vh;
+}
+
+/* #endregion */
+/* #endregion */
 
 /* #region NAV DONE */
 nav ul {
@@ -200,6 +213,7 @@ nav i {
     .img-gameThumbnail {
         width: 100%;
     }
+
     .h6-gameThumbnail {
         font-size: 4vw;
     }
@@ -474,23 +488,25 @@ nav i {
     transition: all 0.2s linear;
     transform: scale(1.02);
 }
-.description-card{
-    max-width: 100%; 
+
+.description-card {
+    max-width: 100%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-#gametitle .btn{
+#gametitle .btn {
     padding: 0.3rem;
     font-size: 0.8rem;
     border: 1px solid #66BBD0;
     background-color: #66BBD0;
     color: #203154;
     cursor: default;
-    height: 
+    height:
 }
-#gametitle .btn:hover{
+
+#gametitle .btn:hover {
     transition: all 0.1s linear;
     transform: scale(1.0);
 }
@@ -543,12 +559,17 @@ nav i {
 
 /* #endregion */
 
-#showPersonalArea{
+#showPersonalArea {
     z-index: 999;
     position: fixed;
     bottom: 0.5rem;
     left: 0.5rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-user{
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    color: #66BBD0;
 }
 
 

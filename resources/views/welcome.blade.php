@@ -270,4 +270,5 @@
         </div>
     </div>
 </section>
+<x-profileimg/>
 </x-layout>
