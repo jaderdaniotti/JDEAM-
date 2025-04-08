@@ -20,4 +20,9 @@ class Apigame extends Model
         'release_date',
         'freetogame_profile_url',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

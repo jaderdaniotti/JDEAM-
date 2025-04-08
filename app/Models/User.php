@@ -25,6 +25,11 @@ class User extends Authenticatable
         'image'
     ];
 
+    public function apigames()
+    {
+        return $this->belongsToMany(Apigame::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -34,6 +39,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
 
     /**
      * Get the attributes that should be cast.
