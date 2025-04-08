@@ -34,8 +34,11 @@ class Website extends Controller
         return view('welcome', compact('categories',  'games', 'platforms', 'gamecategories', 'players', 'apigames'));
 
     }
-    public function profile(User $user, $id){
-        $user = User::find($id);
-        return view('profile', compact('user'));
+    public function profile(User $user, $id)
+    {
+        $user = User::find($id); // Trova l'utente specifico
+        $apigames = $user->apigames; // Recupera i giochi relazionati all'utente
+    
+        return view('profile', compact('user', 'apigames'));
     }
 }

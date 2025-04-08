@@ -3,10 +3,12 @@
 use App\Http\Controllers\Apigames;
 use App\Http\Controllers\Website;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FavoriteController;
 use App\Models\Game;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
+//viste
 Route::get('/', [Website::class,'index'])->name('home');
 Route::get('/jdeam/gestione', [Website::class, 'gestione'])->name('gestione')->middleware('auth');
 Route::get('/dettaglio/{id}', [Apigames::class, 'show']);
@@ -19,10 +21,12 @@ Route::get("/games/{game}/edit", [GameController::class,"edit"])->name("games.ed
 //rotte post
 Route::post("/categories/save", [CategoryController::class, 'store'])->name('categories.store');
 Route::post('/games/save', [GameController::class,'store'])->name('games.store');
+Route::post('/favorites/{apigame}', [FavoriteController::class, 'toggle'])->name('favorites.toggle')->middleware('auth');
 
 //rotte delete
 Route::delete('/categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories.destroy');
 Route::delete('/games/{game}/delete', [GameController::class, 'destroy'])->name('games.destroy');
+Route::delete('/favorites/{apigame}', [FavoriteController::class, 'destroy'])->name('favorites.destroy')->middleware('auth');
 
 //rotte update
 Route::put('/categories/{category}/update', [CategoryController::class, 'update'])->name('categories.update');

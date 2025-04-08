@@ -253,10 +253,29 @@
                     <div class="row">
                       <h5 id="gametitle" class="card-title uppercase"><span class="agdasima-regular">{{$api['title']}}</span></h5>
                     </div>
-                      <h5 id="gametitle" class="card-title description-card"><span class="agdasima-regular ">{{$api['short_description']}}</span></h5>
-                    <h6 id="gametitle" class="cardgame-genre " genre="{{$api->genre}}"><span class="agdasima-regular genre btn">{{$api->genre}}</span></h6>
+                      <h5 id="gametitle" class="card-title description-card"><span class="agdasima-regular ">{{$api['short_description']}}</span>
+                      </h5>
+                      <h6 id="gametitle" class="cardgame-genre " genre="{{$api->genre}}"><span class="agdasima-regular genre btn">{{$api->genre}}</span>
+                      </h6>
                     <hr class="w-25 mx-auto">
-                    <a href="/dettaglio/{{$api['id']}}" class="btn btn-submit">Vedi</a>
+                    <div class="row">
+                      <div class="col-6 justify-content-end d-flex px-1">
+                        <a href="/dettaglio/{{$api['id']}}" class="btn btn-submit">Vedi</a>
+                      </div>
+                      <div class="col-6 justify-content-start d-flex px-1">
+                        @auth
+                        <form action="/favorites/{{$api->id}}" method="POST">
+                          @csrf
+                          @if (auth()->user()->apigames->contains($api->id))
+                            @method('DELETE')
+                          @endif
+                          <button class="btn btn-like" type="submit">
+                           <i class="bi {{ auth()->user()->apigames->contains($api->id) ? 'bi-heart-fill' : 'bi-heart'}}"></i>
+                          </button>
+                        </form>
+                        @endauth
+                      </div>
+                    </div>
                   </div>
                   <hr class="my-2">
                 </div>

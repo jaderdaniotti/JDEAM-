@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_apigame', function (Blueprint $table) {
+        Schema::create('apigame_user', function (Blueprint $table) {
             $table->id();
-            
-            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('apigame_id');
-
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('apigame_id')->references('id')->on('apigames');
-
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user_apigame');
+        Schema::dropIfExists('apigame_user');
     }
 };
