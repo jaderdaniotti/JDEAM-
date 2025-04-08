@@ -585,3 +585,14 @@ nav i {
     }
 }
 
+.rotation.on{
+    animation: rotation 4500ms linear infinite;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}

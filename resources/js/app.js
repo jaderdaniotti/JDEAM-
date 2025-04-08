@@ -135,7 +135,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 //funzione per image nel register
 
-
+const LOGO_NAVBAR = document.getElementById('logoNavbar');
+function addHoverEffect(element){
+    element.addEventListener('mouseover', function(){
+        element.classList.add('on');
+    })
+    element.addEventListener('mouseout', function(){
+        element.classList.remove('on');
+    })
+}
+addHoverEffect(LOGO_NAVBAR);
 
 
 

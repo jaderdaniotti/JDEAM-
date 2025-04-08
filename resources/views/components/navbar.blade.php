@@ -2,7 +2,7 @@
     <div class="container-fluid ">
         <div class="d-flex  justify-content-center align-items-center">
             <a class="nav-link active" aria-current="page" href="{{route('home')}}">
-                <img src="/images/LOGO/fullstack.png" alt="Logo" height="100">
+                <img src="/images/LOGO/fullstack.png" alt="Logo" height="100" id="logoNavbar" class="rotation">
             </a>
             <a class="nav-link active darker-grotesque text-dark" href="/">Jdeam</a>
 
