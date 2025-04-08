@@ -41,4 +41,8 @@ class Website extends Controller
     
         return view('profile', compact('user', 'apigames'));
     }
+    public function listUser(User $user){
+        $users = User::orderBy('created_at', 'desc')->get();
+        return view('listUser', compact('users'));
+    }
 }

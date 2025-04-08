@@ -13,6 +13,7 @@ Route::get('/', [Website::class,'index'])->name('home');
 Route::get('/jdeam/gestione', [Website::class, 'gestione'])->name('gestione')->middleware('auth');
 Route::get('/dettaglio/{id}', [Apigames::class, 'show']);
 Route::get('/profile/{id}',[Website::class, 'profile'])->name('profile')->middleware('auth');
+Route::get('/listUsers', [Website::class, 'listUser'])->name('listUsers')->middleware('auth');
 
 //rotte edit
 Route::get("/categories/{category}/edit", [CategoryController::class, 'edit'])->name('categories.edit')->middleware('auth');
