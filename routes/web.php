@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 //viste
 Route::get('/', [Website::class,'index'])->name('home');
 Route::get('/jdeam/gestione', [Website::class, 'gestione'])->name('gestione')->middleware('auth');
-Route::get('/dettaglio/{id}', [Apigames::class, 'show']);
+Route::get('/dettaglio/{id}', [Apigames::class, 'show'])->middleware('auth');
 Route::get('/profile/{id}',[Website::class, 'profile'])->name('profile')->middleware('auth');
 Route::get('/listUsers', [Website::class, 'listUser'])->name('listUsers')->middleware('auth');
 
@@ -22,7 +22,7 @@ Route::get("/games/{game}/edit", [GameController::class,"edit"])->name("games.ed
 //rotte post
 Route::post("/categories/save", [CategoryController::class, 'store'])->name('categories.store');
 Route::post('/games/save', [GameController::class,'store'])->name('games.store');
-Route::post('/favorites/{apigame}', [FavoriteController::class, 'toggle'])->name('favorites.toggle')->middleware('auth');
+Route::post('/favorites/{apigame}', [FavoriteController::class, 'toggle'])->name('favorites.toggle')->middleware('auth')->middleware('verified');
 
 //rotte delete
 Route::delete('/categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories.destroy');
