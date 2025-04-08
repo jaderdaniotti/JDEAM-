@@ -17,12 +17,16 @@
 
             <label for="password" >Inserisci la tua password</label>
             <input type="password" name="password" class="form-control" placeholder="Inserisci la tua password...">
-            <br>
+            <h6 class="text-white mt-1">Hai dimenticato la password?
+                <a href="{{route('password.request')}}" class="text-white anim-rotate mt-1">Clicca qui per reimpostarla </a>
+            </h6>
             <button type="submit" class="btn ">Entra</button>
-            <br>
-            <h4 class="text-white mt-1">Non sei ancora registrato? Clicca qui per registrarti
-                <a href="{{route('register')}}" class="text-white anim-rotate btn mt-1"><i class="bi bi-person-add"></i></a>
-            </h4>
+            <h5 class="text-white text-center my-0">Hai dimenticato la password? 
+                <a href="{{route('password.request')}}" class="text-white anim-rotate mt-1">Clicca qui per reimpostarla</a>
+            </h5>
+            <h5 class="text-white text-center mt-0">Non sei ancora registrato? 
+                <a href="{{route('register')}}" class="text-white anim-rotate mt-1">Registrati</a>
+            </h5>
         </form>
 
 

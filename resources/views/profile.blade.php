@@ -9,10 +9,12 @@
                             <img src="{{ asset('storage/' . $user->image)}}" alt="" class="rounded img-fluid">
                     </div>
                     <div class="card-body">
-
-                        <h4 class="card-text m-0">Nome: <span class="">{{$user->name}}</span></h4>
-                        <h4 class="card-text m-0">Email: <span class="">{{$user->email}}</span></h4>
-
+                        <h4 class="card-text m-0">Nome: <span class="text-white">{{$user->name}}</span></h4>
+                        <h4 class="card-text m-0">Email: <span class="text-white">{{$user->email}}</span></h4>
+                        <h4 class="card-text m-0">Password: <span class="text-white">*********</span></h4>
+                        <h4 class="card-text m-0">Data di registrazione: <span class="text-white">{{$user->created_at}}</span></h4>
+                        <a href="" class="btn mt-1"  data-bs-toggle="modal" data-bs-target="#modelEditUser">Modifica info <i class="bi bi-pencil-square"></i></a>
+                        <a href="" class="btn mt-1"  data-bs-toggle="modal" data-bs-target="#modelEditPasswordLabel">Modifica password <i class="bi bi-pencil-square"></i></a>
                     </div>
                 </div>
             </div>
@@ -33,5 +35,88 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="modelEditUser" tabindex="-1" aria-labelledby="modelEditUserLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content bg-section-fonce">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex p-1">
+                <div class="container-fluid justify-content-center ">
+                    <form action="{{route('user-profile-information.update')}}" method="POST" class="  px-1 py-0 m-0" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <h2 class="text-center agdasima-bold text-white">MODIFICA INFO</h2>
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <h4 class="card-text mb-1 text-white">Cambia nome</h4>
+                        <input type="text" name="name" class="form-control" placeholder="Inserisci nome..." value="{{old('name')}}">
+                        {{ $errors->updateProfileInformation->first('name') ?? '' }}
+                        <h4 class="card-text mb-1 text-white">Cambia email</h4>
+                        <input type="text" name="email" class="form-control" placeholder="Inserisci email..." value="{{old('name')}}">
+                        <h4 class="card-text mb-1 text-white">Foto profilo</h4>
+                        <div id="labelImageUser"></div>
+                        <input type="file" name="image" class="form-control" value="{{old('image')}}" id="imageUser">
+                        {{ $errors->updateProfileInformation->first('image') ?? '' }}
+                        <br>
+                        <button type="submit" class="btn">Aggiorna dati</button>
+                        <br>
+                    </form>
+                    <hr>
 
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modelEditPasswordLabel" tabindex="-1" aria-labelledby="modelEditPasswordLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content bg-section-fonce">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex p-1">
+                <div class="container-fluid justify-content-center ">
+                    <form action="{{route('user-password.update')}}" method="POST" class="px-1 py-0 m-0">
+                        @csrf
+                        @method('PUT')
+                        <h2 class="text-center agdasima-bold text-white">MODIFICA PASSWORD</h2>
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{$error}}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif                
+                        <h4 class="card-text mb-1 text-white">Vecchia password</h4>
+                        <input type="password" name="current_password" class="form-control" placeholder="Vecchia password...">
+                        {{ $errors->updateProfileInformation->first('current_password') ?? '' }}
+                        <h4 class="card-text mb-1 text-white">Nuova password</h4>
+                        <input type="password" name="password" class="form-control" placeholder="Vecchia password...">
+                        {{ $errors->updateProfileInformation->first('password') ?? '' }}
+                        <h4 class="card-text mb-1 text-white">Conferma nuova password</h4>
+                        <input type="password" name="password_confirmation" class="form-control" placeholder="Vecchia password...">
+                        {{ $errors->updateProfileInformation->first('password_confirmation') ?? '' }}
+                        <br>
+                        <button type="submit" class="btn">Aggiorna Password</button>
+                        <br>
+                    </form>
+                    <hr>
+
+                </div>
+            </div>
+
+          </div>
+        </div>
+    </div>
 </x-layout>

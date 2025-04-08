@@ -1,5 +1,11 @@
 <x-layout>
-<section class="header bg-section-claire ">
+  <div class="container">
+    <form class="d-flex p-2 mt-3" role="search">
+      <input class="form-control me-2" type="text" placeholder="Cerca un prodotto..." aria-label="Search" id="searchInput" onkeyup="">
+    </form>
+  </div>
+
+<section class="header bg-section-claire pt-0">
     <div class="container-fluid">
         <div class="row">
           <div id="risultatiRicerca" class="text-white container">
@@ -259,10 +265,8 @@
                       </h6>
                     <hr class="w-25 mx-auto">
                     <div class="row">
-                      <div class="col-6 justify-content-end d-flex px-1">
-                        <a href="/dettaglio/{{$api['id']}}" class="btn btn-submit">Vedi</a>
-                      </div>
-                      <div class="col-6 justify-content-start d-flex px-1">
+                      <div class="col-12 justify-content-center d-flex px-1 ">
+                        <a href="/dettaglio/{{$api['game_id']}}" class="btn btn-submit mx-1">Vedi</a>
                         @auth
                         <form action="/favorites/{{$api->id}}" method="POST">
                           @csrf
@@ -274,6 +278,9 @@
                           </button>
                         </form>
                         @endauth
+                      </div>
+                      <div class="col-6 justify-content-start d-flex px-1">
+
                       </div>
                     </div>
                   </div>
