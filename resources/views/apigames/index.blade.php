@@ -10,7 +10,8 @@
             <div id="risultatiRicerca" class="text-white container">
               <hr>
             </div>
-              <div class="d-none d-lg-block d-xl-block col-2 col-md-none mt-2">
+            {{-- filtri su pc --}}
+            <div class="d-none d-lg-block d-xl-block col-2 col-md-none mt-2">
                   <div class="accordion" id="accordionPanelsStayOpenExample">
                       <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -122,8 +123,10 @@
                         </div>
                       </div>
                   </div>
-              </div>
-              <div class=" d-lg-none d-xl-none col-12 mt-2">
+            </div>
+            {{-- fine filtri su pc --}}
+            {{-- filtri su md --}}
+            <div class=" d-lg-none d-xl-none col-12 mt-2">
                 <div class="accordion" id="accordionPanelsStayOpenExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header">
@@ -187,6 +190,7 @@
                     </div>
                 </div>
             </div>
+            {{-- fine filtri su md --}}
             <div class="col-12 col-lg-10 container-games mt-2">
             <div class="row" id="index-games">
                 @foreach ($apigames as $api)

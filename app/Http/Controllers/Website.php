@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Pagination\Paginator;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 
 class Website extends Controller
@@ -46,6 +48,35 @@ class Website extends Controller
         return view('listUser', compact('users'));
     }
     public function contact(){
-        return view('contact');
+        return view('contact.contact');
+    }
+    public function sendEmail(Request $request){
+
+        $request->validate([
+
+            'name' => [
+                'required',
+                'string'
+            ],
+            'email' => [
+                'required',
+                'email'
+            ],
+            'message' => [
+                'required',
+                'string', 
+                'min:10',
+                'max:1000'
+            ],           
+        ]);
+
+        $mail = [
+            'name' => strtolower($request->name),
+            'email' => $request->input('email'),
+            'message' => $request->message,
+        ];
+        Mail::to($mail['email'])->send(new ContactMail($mail));
+        return redirect('/contact')->with('success', 'Email inviata correttamente!');
+
     }
 }

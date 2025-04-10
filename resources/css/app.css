@@ -748,12 +748,8 @@ footer {
 
 .formbox{
     width: 90%;
-    font-size: ;
+    border-radius: 38px;
 }
-
-
-
-
 
 @media screen and (max-width: 768px) {
     .aside-left {

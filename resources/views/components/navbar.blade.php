@@ -26,6 +26,9 @@
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('profile', Auth::user()->id)}}">Area personale</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active agdasima-regular" href="{{route('contact')}}">contattami</a>
+              </li>
               {{-- @if(Auth::user()->isAdmin)
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('gestione')}}">Gestione</a>

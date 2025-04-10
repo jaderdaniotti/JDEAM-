@@ -120,7 +120,7 @@ SEARCHINPUTNAVBAR.addEventListener('keyup', function() {
                 let gameDiv = document.createElement('div');
                 gameDiv.classList.add();
                 gameDiv.innerHTML = `
-                <div class="row align-items-center">
+                <div class="row align-items-center ">
                 <div class="col-6 d-flex justify-content-end"
                 <a href="">
                     <img src="${game.thumbnail}" alt="" class="img-gameThumbnail rounded">

@@ -26,6 +26,7 @@ Route::get("/categories/{category}/edit", [CategoryController::class, 'edit'])->
 Route::post("/categories/save", [CategoryController::class, 'store'])->name('categories.store')->middleware('verified');
 // Route::post('/games/save', [GameController::class,'store'])->name('games.store')->middleware('verified');
 Route::post('/favorites/{apigame}', [FavoriteController::class, 'toggle'])->name('favorites.toggle')->middleware('auth')->middleware('verified');
+Route::post("/sendMail", [Website::class, 'sendEmail'])->name('sendMail');
 
 //rotte delete
 Route::delete('/categories/{category}/delete', [CategoryController::class, 'destroy'])->name('categories.destroy')->middleware('verified');
