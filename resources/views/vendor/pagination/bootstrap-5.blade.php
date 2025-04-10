@@ -28,13 +28,13 @@
 
         <div class="d-none flex-sm-fill d-sm-flex align-items-sm-center justify-content-sm-between">
             <div>
-                <p class="small text-muted">
+                <p class="small text-white fs-6">
                     {!! __('Showing') !!}
-                    <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
+                    <span class="">{{ $paginator->firstItem() }}</span>
                     {!! __('to') !!}
-                    <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
+                    <span class="">{{ $paginator->lastItem() }}</span>
                     {!! __('of') !!}
-                    <span class="fw-semibold">{{ $paginator->total() }}</span>
+                    <span class="">{{ $paginator->total() }}</span>
                     {!! __('results') !!}
                 </p>
             </div>

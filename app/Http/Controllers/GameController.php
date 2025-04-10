@@ -6,15 +6,25 @@ use App\Models\Game;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
 use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Pagination\Paginator;
+use App\Models\User;
 
 class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(Category $category, Game $game){
+
+        $categories = Category::all();
+        $gamecategories = Category::where("type", 'category')->get();
+        $platforms = Category::where('type', 'platform')->get();
+        $players = Category::where('type','player')->get();
+        $games = Game::all();
+        return view('games.index', compact('categories',  'games', 'platforms', 'gamecategories', 'players'));
+
     }
 
     /**

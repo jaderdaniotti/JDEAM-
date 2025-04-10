@@ -38,11 +38,14 @@ class Website extends Controller
     {
         $user = User::find($id); // Trova l'utente specifico
         $apigames = $user->apigames; // Recupera i giochi relazionati all'utente
-    
+        
         return view('profile', compact('user', 'apigames'));
     }
     public function listUser(User $user){
         $users = User::orderBy('created_at', 'desc')->get();
         return view('listUser', compact('users'));
+    }
+    public function contact(){
+        return view('contact');
     }
 }

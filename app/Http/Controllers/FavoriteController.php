@@ -13,12 +13,12 @@ class FavoriteController extends Controller
     {
         $user = auth()->user();
         $user->apigames()->attach($apigame->id);
-        return to_route("home");
+        return back();
     }
     public function destroy(Apigame $apigame, User $user)
     {
         $user = auth()->user();
         $user->apigames()->detach($apigame->id);
-        return to_route("home");
+        return back();
     }
 }

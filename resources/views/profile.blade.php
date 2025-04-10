@@ -20,17 +20,28 @@
             </div>
             <div class="col-12 col-lg-8 justify-content-center bg-section-fonce my-2 rounded text-white">
                 <h2 class="text-center mt-1 text-white ">Titoli preferiti</h2>
-             @foreach ($apigames as $game)
-             <div class="row mt-1">
-                <img src="{{$game->thumbnail}}" alt="" class="col-4 col-lg-3 img-fluid rounded-start">
-                <div class="col-8 col-lg-9 d-flex flex-column justify-content-center align-items-start">
-                    <h4 class="card-text m-0">Nome: <span class="">{{$game->title}}</span></h4>
-                    <h4 class="card-text m-0">Piattaforma: <span class="">{{$game->platform}}</span></h4>
-                    <h4 class="card-text m-0">Genere: <span class="">{{$game->genre}}</span></h4>
-                    <h4 class="card-text m-0">Data di rilascio: <span class="">{{$game->release_date}}</span></h4>
+            @foreach ($apigames as $game)
+            <a href="/dettaglio/{{$game['game_id']}}" class="text-decoration-none text-white">
+                <div class="row mt-1">
+                    <img src="{{$game->thumbnail}}" alt="" class="col-4 col-lg-3 img-fluid rounded-start" href="/dettaglio/{{$game['game_id']}}">
+                    <div class="col-10 col-lg-10 d-flex flex-column justify-content-center align-items-start min-width">
+                        <h4 class="card-text m-0">Nome: <span class="">{{$game->title}}</span></h4>
+                        <h4 class="card-text m-0">Piattaforma: <span class="">{{$game->platform}}</span></h4>
+                        <h4 class="card-text m-0">Genere: <span class="">{{$game->genre}}</span></h4>
+                        <h4 class="card-text m-0">Data di rilascio: <span class="">{{$game->release_date}}</span></h4>
+                    </div>
+                    <div class="col-2  d-flex text-end justify-content-end align-items-center w-100">
+                        <form action="/favorites/{{$game->id}}" method="POST" class="w-100">
+                            @csrf
+                              @method('DELETE')
+                            <button class="btn btn-like" type="submit">
+                             <i class="bi {{ auth()->user()->apigames->contains($game->id) ? 'bi-heart-fill' : 'bi-heart'}}"></i>
+                            </button>
+                          </form>
+                    </div>
                 </div>
-             </div>
-             <hr>
+            </a>
+            <hr>
             @endforeach 
             </div>
         </div>
@@ -120,3 +131,13 @@
         </div>
     </div>
 </x-layout>
+
+{{-- <form action="/favorites/{{$api->id}}" method="POST">
+    @csrf
+    @if (auth()->user()->apigames->contains($api->id))
+      @method('DELETE')
+    @endif
+    <button class="btn btn-like" type="submit">
+     <i class="bi {{ auth()->user()->apigames->contains($api->id) ? 'bi-heart-fill' : 'bi-heart'}}"></i>
+    </button>
+  </form> --}}

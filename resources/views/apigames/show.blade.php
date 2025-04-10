@@ -90,5 +90,22 @@
                 </div>
             </div>
         </div>
+        <div class="addToLike">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <form action="/favorites/{{$currentGame['id']}}" method="POST">
+                            @csrf
+                            @if (auth()->user()->apigames->contains($game['id']))
+                              @method('DELETE')
+                            @endif
+                            <button class="btn btn-like" type="submit">
+                             <i class="bi {{ auth()->user()->apigames->contains($currentGame['id']) ? 'bi-heart-fill' : 'bi-heart'}}"></i>
+                            </button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <x-profileimg/>
     </x-layout>

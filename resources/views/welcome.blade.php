@@ -1,11 +1,16 @@
 <x-layout>
-  <div class="container">
+  {{-- <div class="container">
     <form class="d-flex p-2 mt-3" role="search">
       <input class="form-control me-2" type="text" placeholder="Cerca un prodotto..." aria-label="Search" id="searchInput" onkeyup="">
     </form>
-  </div>
-
-<section class="header bg-section-claire pt-0">
+  </div> --}}
+  {{-- <section class="container container-welcome">
+    <div class="row justify-content-evenly min-height-50 mt-4">
+      <a class="btn mb-4 bg-gradient-1" href="{{route('games.index')}}">GAMES <br><span>Giochi creati via CRUD</span></a>
+      <a class="btn mb-4 bg-gradient-1" href="{{route('apigames.index')}}">APIGAMES <br><span>Giochi presi da API</span></a>
+    </div>
+  </section> --}}
+{{-- <section class="header bg-section-claire pt-0">
     <div class="container-fluid">
         <div class="row">
           <div id="risultatiRicerca" class="text-white container">
@@ -244,8 +249,8 @@
                 <div class="card col-12 col-md-6 col-lg-4" >
                   <img src="{{Storage::url($game->image)}}" class="" alt="..." width="100%">
                   <div class="card-body text-center">
-                    <h5 id="gametitle" class="card-title "><span class="agdasima-regular">{{$game->name}}</span></h5>
-                    <h6 id="gametitle" class="cardgame-genre " genre="{{$game->categories}}"><span class="agdasima-regular">{{$game->categories}}</span></h6>
+                    <h5 id="gametitle" class="card-title "><span class="agdasima-regular">{{$game['name']}}</span></h5>
+                    <h6 id="gametitle" class="cardgame-genre " genre="{{$game['price']}}"><span class="agdasima-regular">{{$game['price']}}$</span></h6>
                     <a href="#" class="btn btn-submit">Vedi</a>
                   </div>
                   <hr>
@@ -295,6 +300,162 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+<div class="container p-0 mt-2 ">
+  <div class="row mx-0 flex-column align-items-center justify-items-center w-100">
+    <div class="col-12 welcome-box box1 align-items-center text-center px-2">
+      <h2 class="stringa1 text-white f-size-max my-0"></h2>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        var stringa1 = {
+          strings: [ 
+            'CREA IL TUO ACCOUNT...',
+            '<i class="bi bi-person-add"></i>',
+             'O FAI IL LOGIN...',
+             '<i class="bi bi-box-arrow-in-right"></i>',
+             '<i class="bi bi-person-walking"></i><i class="bi bi-person-walking"></i><i class="bi bi-person-walking"></i>',
+             '<i class="bi bi-person-bounding-box"></i>',
+             '<i class="bi bi-person-check-fill"></i>',
+             '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>',
+             '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>',
+             '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>'
+          ],
+          typeSpeed: 45
+        };
+        var typed = new Typed('.stringa1', stringa1);
+      </script>
+    </div>
+    <div class="col-12 my-3 welcome-box box2 align-items-center text-center px-2">
+      <h2 class="stringa2 text-white f-size-max my-0"></h2>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        let stringa_a_comparsa = document.querySelector('.stringa2')
+        var stringa2 = {
+          strings: [ 
+            'ESPLORA I MIEI',
+             '<i class="bi bi-controller"></i>',
+             'GIOCHI',
+             '<i class="bi bi-joystick"></i>',
+             'AGGIUNGILI AI PREFERITI',
+             '<i class="bi bi-heart"></i>',
+             '<i class="bi bi-arrow-through-heart"></i>',
+             '<i class="bi bi-heart-fill"></i>',
+            'VUOI GIOCARLI?',
+             '<i class="bi bi-pc-display"></i>',
+            'TROVERAI IL LINK!',
+             '<i class="bi bi-link"></i>',
+            '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>',
+             '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>'
+          ],
+          typeSpeed: 45
+        };
+        function logElementInViewport(element) {
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                var typed = new Typed(element, stringa2);
+                observer.unobserve(element); // Smette di osservare l'elemento dopo l'intersezione
+              }
+            });
+          });
+          observer.observe(element);
+        }
+        logElementInViewport(stringa_a_comparsa);
+
+      </script>
+    </div>
+    <div class="col-12 welcome-box box3 align-items-center text-center ">
+      <h2 class="stringa3 text-white f-size-max my-0"></h2>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        let stringa_a_comparsa2 = document.querySelector('.stringa3')
+        var stringa3 = {
+          strings: [ 
+            'RINGRAZIO IL CAST',
+            
+             '<i class="bi bi-filetype-html"></i>',
+             '<i class="bi bi-filetype-css"></i>',
+             '<i class="bi bi-bootstrap"></i>',
+             '<i class="bi bi-filetype-js"></i>',
+             '<i class="bi bi-filetype-json"></i>',
+             '<i class="bi bi-filetype-php"></i>',
+             '<i class="bi bi-filetype-sql"></i>',
+             'E...',
+            'DULCIS',
+             '<i class="bi bi-cake2"></i>',
+            'IN FUNDO',
+             '...',
+            'LARAVEL',
+             'SE JDEAM',
+            'TI STA PIACENDO',
+             '<i class="bi bi-arrow-through-heart"></i>',
+            '<i class="bi bi-arrow-through-heart-fill"></i>',
+             'COSA ASPETTI?',
+            'CONTATTAMI VIA...',
+             '<i class="bi bi-envelope"></i>',
+            'OPPURE SU',
+             '<i class="bi bi-linkedin"></i>',
+             'ESPLORA IL MIO',
+             '<i class="bi bi-github"></i>',
+            'TI ASPETTO!',
+            'TROVERAI TUTTO',
+            'SULLA SEZIONE',
+            'CONTATTI',
+            '<i class="bi bi-person-lines-fill"></i>',
+            '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>',
+             '<i class="bi bi-person-standing"></i>',
+            '<i class="bi bi-person-arms-up"></i>',
+          ],
+          typeSpeed: 45
+        };
+        function logElementInViewport(element) {
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                var typed = new Typed(element, stringa3);
+                observer.unobserve(element); // Smette di osservare l'elemento dopo l'intersezione
+              }
+            });
+          });
+          observer.observe(element);
+        }
+        logElementInViewport(stringa_a_comparsa2);
+
+      </script>
+    </div>
+  </div>
+</div>
 <x-profileimg/>
+<x-footer/>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  import Typed from 'typed.js';
+  let welcomeBox1 = document.querySelector('.box1');
+let welcomeBox2 = document.querySelector('.box2');
+let welcomeBox3 = document.querySelector('.box3');
+function logElementInViewport(element) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+       element.classList.add('anim');
+       console.log
+        observer.unobserve(element); // Smette di osservare l'elemento dopo l'intersezione
+      }
+    });
+  });
+
+  observer.observe(element);
+}
+logElementInViewport(welcomeBox2);
+logElementInViewport(welcomeBox3);
+
+
+</script>
+
 </x-layout>

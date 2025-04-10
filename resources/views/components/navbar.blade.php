@@ -14,7 +14,7 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav  mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active agdasima-regular" href="{{route('home')}}">giochi</a>
+                <a class="nav-link active agdasima-regular" href="{{route('apigames.index')}}">giochi</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('listUsers')}}">COMUNITà</a>
@@ -26,11 +26,11 @@
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('profile', Auth::user()->id)}}">Area personale</a>
               </li>
-              @if(Auth::user()->isAdmin)
+              {{-- @if(Auth::user()->isAdmin)
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('gestione')}}">Gestione</a>
               </li>
-              @endif
+              @endif --}}
               @endauth
         </ul>
         
