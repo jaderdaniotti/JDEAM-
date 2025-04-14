@@ -35,7 +35,8 @@ body {
 .f-size-max {
     font-size: calc(3vw + 3vh);
 }
-.f-size-adapt{
+
+.f-size-adapt {
     font-size: calc(4vw + 2vh);
 }
 
@@ -349,6 +350,19 @@ nav i {
 
 .container-welcome .btn span {
     font-size: 38px;
+    color: white;
+}
+
+.btn-like-on {
+    background-color: transparent;
+}
+
+.btn-like-on i:hover {
+    color: #F7374F;
+}
+
+.btn-close {
+    background-color: #66BBD0;
     color: white;
 }
 
@@ -746,7 +760,24 @@ footer {
 
 /* #endregion */
 
-.formbox{
+/* #region FILTER DIV A DESTRA */
+
+.filter-div {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 1rem;
+    right: 2rem;
+    z-index: 999;
+}
+.filter-div button {
+    font-size: 1.2rem;
+}
+
+/* #endregion */
+
+.formbox {
     width: 90%;
     border-radius: 38px;
 }

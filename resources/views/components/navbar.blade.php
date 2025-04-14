@@ -29,11 +29,11 @@
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('contact')}}">contattami</a>
               </li>
-              {{-- @if(Auth::user()->isAdmin)
+               {{-- @if(Auth::user()->isAdmin)
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('gestione')}}">Gestione</a>
               </li>
-              @endif --}}
+              @endif  --}}
               @endauth
         </ul>
         

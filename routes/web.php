@@ -18,6 +18,7 @@ Route::get('/profile/{id}',[Website::class, 'profile'])->name('profile')->middle
 Route::get('/listUsers', [Website::class, 'listUser'])->name('listUsers')->middleware('auth');
 Route::get('/contact', [Website::class, 'contact'])->name('contact');
 
+
 //rotte edit
 Route::get("/categories/{category}/edit", [CategoryController::class, 'edit'])->name('categories.edit')->middleware('auth');
 // Route::get("/games/{game}/edit", [GameController::class,"edit"])->name("games.edit")->middleware('auth');

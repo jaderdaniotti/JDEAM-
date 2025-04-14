@@ -13,22 +13,12 @@ use App\Models\User;
 class Apigames extends Controller
 {
     public function index(Category $category, Game $game){
-
-        // $apigames = Http::get('https://www.freetogame.com/api/games');
-        $apigames = Apigame::paginate(21);
- 
-        $categories = Category::all();
-        $gamecategories = Category::where("type", 'category')->get();
-        $platforms = Category::where('type', 'platform')->get();
-        $players = Category::where('type','player')->get();
-        return view('apigames.index', compact('categories', 'platforms', 'gamecategories', 'players', 'apigames'));
-
+        return view('apigames.index');
     }
     public function show($id)
     {
         // Effettua la chiamata API per ottenere i dettagli del gioco
         $apiResponse = Http::get('https://www.freetogame.com/api/game?id=' . $id);
-    
         // Recupera tutti i giochi dal database
         $games = Apigame::all();
     

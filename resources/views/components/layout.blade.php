@@ -9,10 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
     <title>Jdeam</title>
     @vite (['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body>
 
     <x-navbar/>
     {{ $slot }}
+    @livewireScripts
 </body>
 </html>
