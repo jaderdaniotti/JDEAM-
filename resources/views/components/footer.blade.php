@@ -1,4 +1,4 @@
-<footer class="bg-section-fonce text-center text-lg-start text-white d-flex align-content-center flex-column mt-1">
+<footer class="bg-section-fonce text-center text-lg-start text-white d-flex align-content-center flex-column mt-1 position-static">
     <div class="container d-flex flex-column justify-content-center footer-body">
       <div class="row align-items-center justify-content-between text-center li-footer ">
         <div class="d-none col-lg-2 col-md-6  mb-md-4 d-lg-block foto-footer1">
@@ -31,20 +31,20 @@
   
           <ul class="list-unstyled ul-footer mb-0">
             <li>
-              <a href="#!" class="text-white text-decoration-none"><i class="bi bi-controller"></i> Giochi</a>
+              <a href="{{route('apigames.index')}}" class="text-white text-decoration-none"><i class="bi bi-controller"></i> Giochi</a>
             </li>
             <li>
-              <a href="#!" class="text-white text-decoration-none"><i class="bi bi-people-fill"></i> Comunità</a>
+              <a href="{{route('listUsers')}}" class="text-white text-decoration-none"><i class="bi bi-people-fill"></i> Comunità</a>
             </li>
             <li>
-              <a href="#!" class="text-white text-decoration-none"><i class="bi bi-book"></i> Informazioni</a>
+              <a href="{{route('info')}}" class="text-white text-decoration-none"><i class="bi bi-book"></i> Informazioni</a>
             </li>
             <li>
             @auth
-            <a href="#!" class="text-white text-decoration-none"><i class="bi bi-person-fill"></i> Area personale</a>
+            <a href="{{route('profile')}}" class="text-white text-decoration-none"><i class="bi bi-person-fill"></i> Area personale</a>
             @endauth
             @guest
-            <a href="{{route('login')}}" class="text-white text-decoration-none">Registrati/Accedi</a>
+            <a href="{{route('login')}}" class="text-white text-decoration-none"><i class="bi bi-person-fill"></i>Registrati/Accedi</a>
             @endguest
             </li>
           </ul>

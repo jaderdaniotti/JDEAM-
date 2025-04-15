@@ -68,16 +68,12 @@
                             </div>
                         @endif
                         <h4 class="card-text mb-1 text-white">Cambia nome</h4>
-                        <input type="text" name="name" class="form-control" placeholder="Inserisci nome..." value="{{old('name')}}">
+                        <input type="text" name="name" class="form-control" placeholder="Inserisci nome..." value="{{$user->name}}">
                         {{ $errors->updateProfileInformation->first('name') ?? '' }}
                         <h4 class="card-text mb-1 text-white">Cambia email</h4>
-                        <input type="text" name="email" class="form-control" placeholder="Inserisci email..." value="{{old('name')}}">
-                        <h4 class="card-text mb-1 text-white">Foto profilo</h4>
-                        <div id="labelImageUser"></div>
-                        <input type="file" name="image" class="form-control" value="{{old('image')}}" id="imageUser">
-                        {{ $errors->updateProfileInformation->first('image') ?? '' }}
-                        <br>
-                        <button type="submit" class="btn">Aggiorna dati</button>
+                        <input type="text" name="email" class="form-control" placeholder="Inserisci email..." value="{{$user->email}}">
+                        
+                        <button type="submit" class="btn mt-2">Aggiorna dati</button>
                         <br>
                     </form>
                     <hr>

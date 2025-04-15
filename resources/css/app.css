@@ -12,6 +12,7 @@ body {
 }
 
 /* #region SETTAGGI DONE */
+
 /* #region font */
 .darker-grotesque {
     font-family: "Darker Grotesque", sans-serif;
@@ -724,11 +725,8 @@ footer {
 
 /* #region WelcomeBOX */
 .welcome-box {
-    background-color: #171D25;
-    border-radius: 20%;
-    height: calc(1rem + 50vw);
-    width: calc(1rem + 70vw);
     align-content: center;
+    height: 25vh;
 }
 
 .box1 {
@@ -763,19 +761,56 @@ footer {
 /* #region FILTER DIV A DESTRA */
 
 .filter-div {
-    position: sticky;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     top: 1rem;
-    right: 2rem;
     z-index: 999;
 }
+
 .filter-div button {
     font-size: 1.2rem;
 }
 
 /* #endregion */
+
+/* #region Torna su */
+.torna-su {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.torna-su a {
+    background-color: #1B2838;
+}
+
+.torna-su a:hover {
+    background-color: #7A8B9D;
+
+}
+
+/* #endregion */
+
+/* #region PAGINA INFO */
+.info-ul {
+    background-color: #203154;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.info-li {
+    border-bottom: 1px solid #7A8B9D;
+
+}
+.pagina-info a{
+    text-decoration: none;
+    color: #66BBD0;
+    font-weight: 700;
+}
+
+/* #endregion */
+
 
 .formbox {
     width: 90%;

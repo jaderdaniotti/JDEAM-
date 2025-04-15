@@ -17,6 +17,7 @@ Route::get('/dettaglio/{id}', [Apigames::class, 'show']);
 Route::get('/profile/{id}',[Website::class, 'profile'])->name('profile')->middleware('auth');
 Route::get('/listUsers', [Website::class, 'listUser'])->name('listUsers')->middleware('auth');
 Route::get('/contact', [Website::class, 'contact'])->name('contact');
+Route::get('/info', [Website::class, 'info'])->name('info');
 
 
 //rotte edit

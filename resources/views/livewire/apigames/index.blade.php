@@ -1,16 +1,16 @@
 <div class="div">
-    <div class="filter-div d-flex flex-column">
-        <button type="button" class="btn bg-section-fonce" data-bs-toggle="modal" data-bs-target="#filterCategory">
-            <i class="bi bi-funnel"></i>
-        </button>
-    </div>
-    <div class="container-fluid fs-3 d-flex flex-column justify-content-center">
+
+    <div class="container-fluid fs-3 d-flex flex-column justify-content-center ">
         
-        <div class="row w-100 mt-3">
-            <div class="col-12 d-flex">
+        <div class="row w-100 mt-3 ">
+            <div class="col-12 d-flex pr-0">
                 <input class="form-control me-2 w-100" type="text" wire:model.live='search'
                     placeholder="Cerca un prodotto..." aria-label="Search">
-                </button>
+                <div class="filter-div d-flex flex-column">
+                    <button type="button" class="btn bg-section-fonce" data-bs-toggle="modal" data-bs-target="#filterCategory">
+                        <i class="bi bi-funnel"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -53,6 +53,9 @@
             <div class="row">
                 <div class="col-12  container-games mt-2">
                     <div class="row" id="index-games">
+                        @if (count($apigames) == 0)
+                            <h1>vuoto</h1>
+                        @else
                         @foreach ($apigames as $game)
                             <div class="card col-12 col-md-6 col-lg-3 gamecard p-1 product">
                                 <img src="{{ $game['thumbnail'] }}" class="card-img-top" alt="...">
@@ -94,6 +97,8 @@
                                 <hr class="my-2">
                             </div>
                         @endforeach
+                        @endif
+
                         {{ $apigames->links() }}
                     </div>
                 </div>

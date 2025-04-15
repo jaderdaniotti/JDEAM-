@@ -1,7 +1,7 @@
 <x-layout>
 <div class="container pb-3">
     <h1 class="text-center text-white uppercase mt-3 ">Utenti di jdeam</h1>
-    <div class="row">
+    <div class="row mb-2">
         @foreach ($users as $user)
         @if ($user->isAdmin === 1)
         <div class="col-md-4 mt-3">
@@ -47,6 +47,8 @@
         </div>
         @endif
         @endforeach
+
     </div>
+    {{ $users->links() }}
 </div>
 </x-layout>

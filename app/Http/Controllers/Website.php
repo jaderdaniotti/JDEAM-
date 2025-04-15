@@ -44,7 +44,7 @@ class Website extends Controller
         return view('profile', compact('user', 'apigames'));
     }
     public function listUser(User $user){
-        $users = User::orderBy('created_at', 'desc')->get();
+        $users = User::orderBy('created_at', 'desc')->paginate(21);
         return view('listUser', compact('users'));
     }
     public function contact(){
@@ -78,5 +78,8 @@ class Website extends Controller
         Mail::to($mail['email'])->send(new ContactMail($mail));
         return redirect('/contact')->with('success', 'Email inviata correttamente!');
 
+    }
+    public function info(){
+        return view("info");
     }
 }

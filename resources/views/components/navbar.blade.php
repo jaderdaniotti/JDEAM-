@@ -20,21 +20,16 @@
                 <a class="nav-link active agdasima-regular" href="{{route('listUsers')}}">COMUNITà</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active agdasima-regular" href="#">Informazioni</a>
+                <a class="nav-link active agdasima-regular" href="{{route('info')}}">Informazioni</a>
               </li>
               @auth
               <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('profile', Auth::user()->id)}}">Area personale</a>
               </li>
-              <li class="nav-item">
+              @endauth
+                <li class="nav-item">
                 <a class="nav-link active agdasima-regular" href="{{route('contact')}}">contattami</a>
               </li>
-               {{-- @if(Auth::user()->isAdmin)
-              <li class="nav-item">
-                <a class="nav-link active agdasima-regular" href="{{route('gestione')}}">Gestione</a>
-              </li>
-              @endif  --}}
-              @endauth
         </ul>
         
 
