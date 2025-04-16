@@ -11,7 +11,7 @@
             <div class="col-12 welcome-box box3 align-items-center text-center position-static" id="welcomebox3">
                 <h2 class="stringa3 text-white f-size-max my-0"></h2>
             </div>
-        </div>
+        </div> 
     </div>
     <div id="div-footer">
         <x-footer />
@@ -64,7 +64,7 @@
                 '<i class="bi bi-person-standing"></i>',
                 '<i class="bi bi-person-arms-up"></i>',
             ],
-            typeSpeed: 45
+            typeSpeed: 10
         };
         var stringa2 = {
             strings: [
@@ -85,7 +85,7 @@
                 '<i class="bi bi-person-standing"></i>',
                 '<i class="bi bi-person-arms-up"></i>'
             ],
-            typeSpeed: 45
+            typeSpeed: 10
         };
         var stringa3 = {
             strings: [
@@ -125,7 +125,7 @@
                 '<i class="bi bi-person-standing"></i>',
                 '<i class="bi bi-person-arms-up"></i>',
             ],
-            typeSpeed: 45
+            typeSpeed: 10
         };
 
         function testoacomparsa2(element) {
@@ -155,9 +155,9 @@
           element.classList.add("d-block");
         }
         
-        setTimeout(() => testoacomparsa2(stringa_a_comparsa), 12500);
-        setTimeout(() => testoacomparsa3(stringa_a_comparsa2), 31000);
-        setTimeout(() => visualizzafooter(div_footer), 73000);
+        setTimeout(() => testoacomparsa2(stringa_a_comparsa), 9000);
+        setTimeout(() => testoacomparsa3(stringa_a_comparsa2), 21000);
+        setTimeout(() => visualizzafooter(div_footer), 50000);
         var typed = new Typed('.stringa1', stringa1);
 
     </script>

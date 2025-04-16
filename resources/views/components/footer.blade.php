@@ -41,7 +41,7 @@
             </li>
             <li>
             @auth
-            <a href="{{route('profile')}}" class="text-white text-decoration-none"><i class="bi bi-person-fill"></i> Area personale</a>
+            <a href="{{route('profile', Auth::user()->id)}}" class="text-white text-decoration-none"><i class="bi bi-person-fill"></i> Area personale</a>
             @endauth
             @guest
             <a href="{{route('login')}}" class="text-white text-decoration-none"><i class="bi bi-person-fill"></i>Registrati/Accedi</a>
